@@ -1,6 +1,6 @@
 # Trainee2021.1
 # Brion Drinks e Coquetelaria
-## Projeto Trainee, Code Jr, Grupo 1, 2020.2
+## Projeto Trainee, Code Jr, Grupo 3, 2021.1
 
 Desenvolvedores:
 - Helena Lannes
