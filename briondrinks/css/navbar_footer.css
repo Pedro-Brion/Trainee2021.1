@@ -1,40 +1,98 @@
 html, body {
     margin: 0px;
     padding: 0px;
+    font-family: 'Abhaya Libre', serif;
+}
+
+.navbar, .footer {
+    background-color: #00374D;
 }
 
 .navbar {
-    background-color: green;
     padding-bottom: 10px;
+}
+
+.navbar .logo img{
+    margin-left: 20px;
+    width: 80px;
 }
 
 .navbar ul {
     list-style: none;
-    background-color: red;
     margin-left: 20%;
     margin-right: 20%;
-    margin-top: 0px;
-
+    margin-top: -70px; /* como substituir? */
     text-align: center;
-    vertical-align: middle;
+    vertical-align: center;
 }
 
 .navbar li {
-    display: inline-block;  
+    font-size: 36px;
+    font-family: 'Voga';
+    display: inline-block;
+    margin-left: 15px;
+    margin-right: 15px;  
+    vertical-align: center;
+    color: pink;
 }
 
 .navbar a {
+    color: #F1FFE7;
     text-decoration: none;
 }
 
-.footer-logo img {
+.navbar a:hover {
+    color: #89D1B8;
+}
+
+.nf-content {
+    background-color: #89D1B8;
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+
+.footer {
     height: 200px;
 }
 
-.footer-informacoes {
-
+.footer div {
+    display: inline-block;
+    width: 33%; /* como sao 3 divs, cada div ocupa uma parte igual da pagina */
 }
 
-.footer-redes {
+.footer .logo {
+    max-height: 100%;
+}
 
+.footer .logo img {
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 200px;
+}
+
+.footer .informacoes {
+    text-align: center;
+}
+
+.footer .informacoes h1{
+    font-family: 'Voga';
+    font-size: 28px;
+    text-transform: uppercase;
+}
+
+.footer .informacoes h2 {
+    font-size: 18px;
+}
+
+.footer .redes img{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 40px;
+}
+
+
+
+@font-face {
+    font-family: "Voga";
+    src: url("../font/Voga-Medium.otf")
 }
