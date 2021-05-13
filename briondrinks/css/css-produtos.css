@@ -1,0 +1,80 @@
+body {   
+    background-color: #f1ffe7;
+    font-family: 'Abhaya Libre', serif;
+}
+
+h1 {
+    background-color: #00374d;
+}
+
+h2 {
+    color:#00374d;
+}
+
+.title-page{
+    text-align: center;
+    position: relative
+}
+
+.title-page::after{
+    content:"";
+    border-top: 2px solid #00374d;
+    width: 15%;
+    position:absolute;
+    top: 50px;
+    left: 42.5%;
+}
+
+.cor-principal{
+    background-color:#00374d;
+    color: white;
+}
+
+.borda{
+    border-width: 5px;
+    border-style: solid;
+    border-color: #00374d;
+}
+
+.cor-botao{
+    background-color:#00374d;
+    color:#f1ffe7;
+    font-weight:bold;
+    border: 3px solid #f1ffe7;
+}
+
+.lupa{
+    background-color:#00374d;
+    color:#f1ffe7;
+}
+    
+@media (max-width: 900px){
+    
+    .title-page::after{
+        content:"";
+        border-top: 2px solid #00374d;
+        width: 30%;
+        position:absolute;
+        top: 50px;
+        left: 35.5%;
+    }   
+
+}
+
+@media (max-width: 575px){
+    
+    .title-page::after{
+        content:"";
+        border-top: 2px solid #00374d;
+        width: 40%;
+        position:absolute;
+        top: 50px;
+        left: 30%;
+    }   
+
+    .lupa {
+        margin-top: 2%;
+        margin-left: 42%;
+    }
+
+}
