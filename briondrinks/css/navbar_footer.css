@@ -74,15 +74,18 @@ html, body {
     text-align: center;
 }
 
-.footer .informacoes h1{
+.footer h1{
     font-family: 'Voga';
     font-size: 28px;
     text-transform: uppercase;
+    color: #F1FFE7;
 }
 
 .footer .informacoes h2 {
     font-size: 18px;
 }
+
+
 
 .footer .redes img{
     margin-left: 10px;
