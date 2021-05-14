@@ -7,45 +7,72 @@ h1 {
     background-color: #00374d;
 }
 
-h2 {
-    color:#00374d;
-}
-
 .title-page{
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 32px;
     text-align: center;
-    position: relative
+    position: relative;
+    color:#00374d;
+    
+        animation-name: aparição-lateral;
+        animation-duration: 1.5s;
 }
 
 .title-page::after{
     content:"";
     border-top: 2px solid #00374d;
-    width: 15%;
+    width: 12%;
     position:absolute;
     top: 50px;
-    left: 42.5%;
+    left: 44%;
 }
 
-.cor-principal{
+.filtro-pesquisa{
+        animation-name: aparição-lateral;
+        animation-duration: 1.5s;
+}
+
+.cor-botoes{
+    background-color:#00374d;
+    color:#f1ffe7;
+}
+
+.cor-botoes:hover{
+    transform: scale(1.1,1.1);
+}
+
+.card-produto{
     background-color:#00374d;
     color: white;
+
+    animation-name: aparição-produtos;
+    animation-duration: 1.5s;
 }
 
-.borda{
+.card-produto:hover{
+    transform: scale(1.05,1.05);
+}
+
+.card-borda{
     border-width: 5px;
     border-style: solid;
     border-color: #00374d;
 }
 
-.cor-botao{
+.card-botao{
     background-color:#00374d;
     color:#f1ffe7;
     font-weight:bold;
     border: 3px solid #f1ffe7;
 }
 
-.lupa{
-    background-color:#00374d;
-    color:#f1ffe7;
+.card-botao:hover{
+    transform: scale(1.1,1.1);
+}
+
+.categoria-estilo{
+    font-size: 20px;
 }
     
 @media (max-width: 900px){
@@ -53,10 +80,10 @@ h2 {
     .title-page::after{
         content:"";
         border-top: 2px solid #00374d;
-        width: 30%;
+        width: 15%;
         position:absolute;
         top: 50px;
-        left: 35.5%;
+        left: 42.5%;
     }   
 
 }
@@ -77,4 +104,14 @@ h2 {
         margin-left: 42%;
     }
 
+}
+
+@keyframes aparição-produtos {
+    0% {opacity: 0; transform: scale(0.5,0.5 ) }
+    100% {opacity: 1; transform: scale(1,1) }
+}
+
+@keyframes aparição-lateral {
+    0% {opacity: 0; transform: translate(-30px, 0px) }
+    100% {opacity: 1; transform: translate(0px,0px) }
 }

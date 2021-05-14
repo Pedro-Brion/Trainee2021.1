@@ -14,76 +14,93 @@
 </head>
 <body>
     <!-- Aqui começa a navbar-->
-    <h1 class="text-center cor-principal">NAVBAR</h1>
+    <h1 class="text-center card-produto">NAVBAR</h1>
 
     <!-- Aqui começa o título-->
-    <h2 class="title-page mt-5 mb-5">NOSSOS PRODUTOS</h2>
+    <h2 class="title-page mt-5 mb-5"><b>NOSSOS PRODUTOS</b></h2>
 
-    <!-- Aqui começa a barra de pesquisa-->
-    <div class="d-flex justify-content-center">
-        <nav class="navbar navbar-light bg-light">
-            <form class="form-inline">
-                <input class="form-control mr-sm-2 shadow-lg" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-                <button class="btn my-2 my-sm-0 lupa shadow-lg" type="submit"><i class="fa fa-search"></i></button> 
-            </form>
-        </nav>
-    </div>
+    <!-- Aqui começa a barra de pesquisa e filtro-->
+    <div class="container">
+        <div class="row filtro-pesquisa">
+            <div class="col-sm-6 p-0 col-auto mx-auto mt-4">
+                <div class="btn-group">
+                    
+                    <button class="btn btn dropdown-toggle cor-botoes shadow-lg" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CATEGORIAS</button>
+                    <div class="dropdown-menu">
+                        <li> <span> &#8287; </span> <input type="checkbox" aria-label="Chebox para permitir input text"> <span class="categoria-estilo">Categoria 1</span> </li>
+                        <li> <span> &#8287; </span> <input type="checkbox" aria-label="Chebox para permitir input text"> <span class="categoria-estilo">Categoria 2</span> </li>
+                        <li> <span> &#8287; </span> <input type="checkbox" aria-label="Chebox para permitir input text"> <span class="categoria-estilo">Categoria 3</span> </li>
+                    </div>
 
+                    <button type="button" class="btn btn-md ml-3 cor-botoes shadow-lg">Filtrar</button>
+
+                </div>
+            </div>
+            <div class="col-sm-6 p-0 col-auto mx-auto mt-4">
+                <nav class="navbar navbar-light bg-light flex-row justify-content-end p-0">
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2 shadow-lg" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                        <button class="btn my-2 my-sm-0 cor-botoes lupa shadow-lg" type="submit"><i class="fa fa-search"></i></button> 
+                    </form>
+                </nav>
+            </div>
+        </div>  
+    </div>  
     <!-- Aqui começam os cards-->
     <div class="container shadow-lg mt-5 mb-5 p-5"> 
         <div class="row">
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="card text-center shadow-p borda cor-principal mt-3" >
-                    <img class="card-img-top tamanho-imagem" src="../img/drink5.png" alt="Imagem do drink">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card text-center shadow-p card-borda card-produto mt-3" >
+                    <img class="card-img-top" src="../img/drink5.png" alt="Imagem do drink">
                     <div class="card-body">
                         <h5 class="card-title">Drink Genérico</h5>
                         <p class="card-text">R$ XX,XX</p>
                         <p class="card-text">Categoria Genérica</p>
-                        <button type="button" class="btn cor-botao">VER PRODUTO</button>
+                        <button type="button" class="btn card-botao">VER PRODUTO</button>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="card text-center shadow-p borda cor-principal mt-3" >
-                    <img class="card-img-top tamanho-imagem" src="../img/drink5.png" alt="Imagem do drink">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card text-center shadow-p card-borda card-produto mt-3" >
+                    <img class="card-img-top" src="../img/drink5.png" alt="Imagem do drink">
                     <div class="card-body">
                         <h5 class="card-title">Drink Genérico</h5>
                         <p class="card-text">R$ XX,XX</p>
                         <p class="card-text">Categoria Genérica</p>
-                        <button type="button" class="btn cor-botao">VER PRODUTO</button>
+                        <button type="button" class="btn card-botao">VER PRODUTO</button>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="card text-center shadow-p borda cor-principal mt-3" >
-                    <img class="card-img-top tamanho-imagem" src="../img/drink5.png" alt="Imagem do drink">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card text-center shadow-p card-borda card-produto mt-3" >
+                    <img class="card-img-top" src="../img/drink5.png" alt="Imagem do drink">
                     <div class="card-body">
                         <h5 class="card-title">Drink Genérico</h5>
                         <p class="card-text">R$ XX,XX</p>
                         <p class="card-text">Categoria Genérica</p>
-                        <button type="button" class="btn cor-botao">VER PRODUTO</button>
+                        <button type="button" class="btn card-botao">VER PRODUTO</button>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="card text-center shadow-p borda cor-principal mt-3" >
-                    <img class="card-img-top tamanho-imagem" src="../img/drink5.png" alt="Imagem do drink">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card text-center shadow-p card-borda card-produto mt-3" >
+                    <img class="card-img-top" src="../img/drink5.png" alt="Imagem do drink">
                     <div class="card-body">
                         <h5 class="card-title">Drink Genérico</h5>
                         <p class="card-text">R$ XX,XX</p>
                         <p class="card-text">Categoria Genérica</p>
-                        <button type="button" class="btn cor-botao">VER PRODUTO</button>
+                        <button type="button" class="btn card-botao">VER PRODUTO</button>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="card text-center shadow-p borda cor-principal mt-3" >
-                    <img class="card-img-top tamanho-imagem" src="../img/drink5.png" alt="Imagem do drink">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card text-center shadow-p card-borda card-produto mt-3" >
+                    <img class="card-img-top" src="../img/drink5.png" alt="Imagem do drink">
                     <div class="card-body">
                         <h5 class="card-title">Drink Genérico</h5>
                         <p class="card-text">R$ XX,XX</p>
                         <p class="card-text">Categoria Genérica</p>
-                        <button type="button" class="btn cor-botao">VER PRODUTO</button>
+                        <button type="button" class="btn card-botao">VER PRODUTO</button>
                     </div>
                 </div>
             </div>
@@ -92,7 +109,7 @@
         
     </div>
 <!-- Aqui começa a paginação-->
-    <nav aria-label="Navegação da página de produtos">
+    <nav aria-label="Navegação da página de produtos" class="filtro-pesquisa">
         <ul class="pagination justify-content-center">
           <li class="page-item disabled">
             <a class="page-link" href="#" tabindex="-1">Anterior</a>
@@ -106,6 +123,10 @@
         </ul>
     </nav>
 <!-- Aqui começa o footer-->
-    <h1 class="text-center cor-principal">FOOTER</h1>
+    <h1 class="text-center card-produto">FOOTER</h1>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>
