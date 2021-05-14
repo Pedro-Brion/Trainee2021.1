@@ -3,8 +3,6 @@ function openNav()
     var x = document.getElementById("navbar");
     var y = document.getElementById("menu-icon");
 
-    var img = document.getElementById("logo-img");
-
     if(x.className === "navbar")
     {
         x.className = "navbar menujs";
