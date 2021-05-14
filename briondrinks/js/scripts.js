@@ -3,6 +3,8 @@ function openNav()
     var x = document.getElementById("navbar");
     var y = document.getElementById("menu-icon");
 
+    var img = document.getElementById("logo-img");
+
     if(x.className === "navbar")
     {
         x.className = "navbar menujs";
@@ -11,6 +13,6 @@ function openNav()
     else
     {
         x.className = "navbar";
-        y.innerHTML = "&#x1F378;"; // mudar para as tres linhas
+        y.innerHTML = "&#x1F378; Menu"; // mudar para a taça
     }
 }
