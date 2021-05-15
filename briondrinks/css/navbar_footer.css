@@ -22,8 +22,7 @@ html, body {
 
 .navbar .logo-dir{
     position: absolute;
-    right: -20px;
-    /*margin-left: 87%;*/
+    right: 0px;
 }
 
 .navbar .logo-dir img{
@@ -31,6 +30,7 @@ html, body {
 }
 
 .navbar ul {
+    padding: 0;
     list-style: none;
     margin-left: 20%;
     margin-right: 20%;
@@ -125,7 +125,6 @@ html, body {
 }
 
 
-
 @font-face {
     font-family: "Voga";
     src: url("../font/Voga-Medium.otf")
@@ -139,11 +138,7 @@ html, body {
     margin-top: 0px;
 }
 
-.navbar .logo-dir, .navbar .logo-esq {
-    display: none;
-}
-
-.navbar li {
+.navbar .logo-dir, .navbar .logo-esq, .navbar li {
     display: none;
 }
 
@@ -169,8 +164,8 @@ html, body {
 }
 
 .footer {
+    width: 100%;
     height: auto;
-    display: block;
 }
 
 .footer div {
@@ -183,10 +178,22 @@ html, body {
     text-align: center;
 }
 
+.footer .informacoes h1 {
+    margin: 0;
+    padding: 0;
+}
+
 .footer .logo {
     display: flex;
     justify-content: center;
-    max-width: 98%; /* para nao ultrapassar o texto */
+}
+
+.footer .redes {
+    float: none;
+}
+
+.footer .redes h2 {
+    margin-top: 0;
 }
     
 }
