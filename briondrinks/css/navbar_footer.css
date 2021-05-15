@@ -149,6 +149,7 @@ html, body {
 
 .menujs {
     height: auto;
+    padding-top: 15px;
 }
 
 .menujs ul {
