@@ -21,7 +21,9 @@ html, body {
 }
 
 .navbar .logo-dir{
-    margin-left: 87%;
+    position: absolute;
+    right: -20px;
+    /*margin-left: 87%;*/
 }
 
 .navbar .logo-dir img{
@@ -133,11 +135,20 @@ html, body {
 
 @media (max-width: 1000px) {
 
+.navbar ul {
+    margin-top: 0px;
+}
+
+.navbar .logo-dir, .navbar .logo-esq {
+    display: none;
+}
+
 .navbar li {
     display: none;
 }
 
 .navbar li.menu-icon {
+    padding-top: 20px;
     display: inline-block;
 }
 
