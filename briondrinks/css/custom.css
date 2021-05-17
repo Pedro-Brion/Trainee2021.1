@@ -1,0 +1,45 @@
+#adicionados a.destaque{
+    display: block;
+    background: var(--light);
+    border-radius: 5px;
+    text-align: center;
+    padding: 20 px;
+    color: black;
+     text-decoration:none ;
+     transition: all ease-out 0.2s;
+
+}
+
+#adicionados a.destaque:hover{
+    background-color: blanchedalmond ;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0, 0.12);
+    transform: scale(1.1);
+}
+
+#adicionados a.destaque .img-container{
+    display:flex;
+    align-items: center;
+    justify-content:center ;
+    
+}
+#adicionados1 a.destaque1{
+    display: block;
+    background: var(--light);
+    margin-left: 160mm;
+    text-align:center;
+    padding: 3px;
+    color: black;
+     text-decoration:none ;
+     transition: all ease-out 0.2s;
+}
+#adicionados1 a.destaque1:hover{
+    background-color: blanchedalmond ;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0, 0.12);
+    transform: scale(1.1);
+}
+
+#adicionados1 a.destaque1 .img-container1{
+    display:block;
+    width: 1.5cm;
+    height: 1.5cm;
+}
