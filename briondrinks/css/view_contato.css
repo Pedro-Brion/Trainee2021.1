@@ -1,0 +1,61 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Abhaya Libre', serif;
+    color: black;
+}
+
+.form-contato {
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 70%;
+    background-color: #00374D;
+    color: #F1FFE7;
+    border-radius: 50px;
+}
+
+.contato {
+    font-family: 'Abhaya Libre';
+    background-color: #89D1B8;
+}
+
+.contato h1 {
+    padding: 30px 5% 10px 5%;
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.contato .form-group {
+    font-size: 24px;
+    margin: 10px 10% 10px 10%;
+}
+
+#input-botao {
+    margin: 10px 0 20px 20%;
+}
+
+.contato-mapa {
+    font-family: 'Voga';
+    text-transform: uppercase;
+    text-align: center;
+    padding-left: 70%;
+    padding-bottom: 20px;
+    padding-top: 40px;
+}
+
+@media (max-width: 1000px) {
+
+.contato {
+    display: block;
+}
+
+.contato-mapa {
+    padding: 30px 0 30px 0;
+}
+
+.form-contato {
+    margin: auto;
+    width: 80%;
+}
+
+}

@@ -2,6 +2,7 @@ html, body {
     margin: 0px;
     padding: 0px;
     font-family: 'Abhaya Libre', serif;
+    color: black;
 }
 
 .navbar, .footer {
@@ -20,11 +21,6 @@ html, body {
     display: inline-block;
 }
 
-.navbar .logo-dir{
-    position: absolute;
-    right: 0px;
-}
-
 .navbar .logo-dir img{
     transform: scaleX(-1);
 }
@@ -32,10 +28,7 @@ html, body {
 .navbar ul {
     padding: 0;
     list-style: none;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: -70px; /* como substituir? */
-    text-align: center;
+    margin:  auto;
     vertical-align: center;
 }
 
@@ -56,6 +49,7 @@ html, body {
 
 .navbar a:hover, .navbar li.menu-icon:hover {
     color: #89D1B8;
+    text-decoration: none;
 }
 
 .navbar li.menu-icon {
@@ -63,17 +57,13 @@ html, body {
     cursor: pointer;
 }
 
-.nf-content {
-    background-color: #89D1B8;
-    padding-top: 200px;
-    padding-bottom: 200px;
-}
-
 .footer {
     height: 180px;
+    color: black;
 }
 
 .footer h1{
+    padding-top: 20px;
     font-family: 'Voga';
     font-size: 28px;
     text-transform: uppercase;
@@ -134,8 +124,15 @@ html, body {
 
 @media (max-width: 1000px) {
 
+.navbar {
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+
 .navbar ul {
-    margin-top: 0px;
+    margin-top: 0;
+    padding: 0;
 }
 
 .navbar .logo-dir, .navbar .logo-esq, .navbar li {
@@ -143,7 +140,8 @@ html, body {
 }
 
 .navbar li.menu-icon {
-    padding-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     display: inline-block;
 }
 
@@ -165,6 +163,7 @@ html, body {
 .footer {
     width: 100%;
     height: auto;
+    padding-bottom: 10px;
 }
 
 .footer div {
