@@ -1,6 +1,13 @@
+﻿html {
+    margin: 0px;
+    padding: 0px;
+}
+
 body {   
     background-color: #f1ffe7;
     font-family: 'Abhaya Libre', serif;
+    margin: 0px;
+    padding: 0px;
 }
 
 h1 {
@@ -113,7 +120,7 @@ h1 {
         border-top: 2px solid #00374d;
         width: 40%;
         position:absolute;
-        top: 100px;
+        top: 40px;
         left: 30%;
     }   
 
