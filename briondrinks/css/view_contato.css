@@ -3,6 +3,7 @@ html, body {
     padding: 0px;
     font-family: 'Abhaya Libre', serif;
     color: black;
+    background-color: #89D1B8;
 }
 
 .form-contato {
@@ -35,12 +36,34 @@ html, body {
 }
 
 .contato-mapa {
-    font-family: 'Voga';
+    font-family: 'Abhaya Libre';
     text-transform: uppercase;
     text-align: center;
     padding-left: 70%;
     padding-bottom: 20px;
     padding-top: 40px;
+}
+
+.title-page{
+    font-family: 'Abhaya Libre';
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 32px;
+    text-align: center;
+    position: relative;
+    color:#00374d;
+    
+        animation-name: aparição-lateral;
+        animation-duration: 1.5s;
+}
+
+.title-page::after{
+    content:"";
+    border-top: 2px solid #00374d;
+    width: 12%;
+    position:absolute;
+    top: 50px;
+    left: 44%;
 }
 
 @media (max-width: 1000px) {
@@ -58,4 +81,58 @@ html, body {
     width: 80%;
 }
 
+}
+
+@media (max-width: 900px){
+    
+    .title-page::after{
+        content:"";
+        border-top: 2px solid #00374d;
+        width: 15%;
+        position:absolute;
+        top: 50px;
+        left: 42.5%;
+    }   
+
+}
+
+@media (max-width: 575px){
+    
+    .title-page::after{
+        content:"";
+        border-top: 2px solid #00374d;
+        width: 40%;
+        position:absolute;
+        top: 50px;
+        left: 30%;
+    }   
+
+    .lupa {
+        margin-top: 2%;
+        margin-left: 42%;
+    }
+
+}
+
+@media (max-width: 289px){
+    
+    .title-page::after{
+        content:"";
+        border-top: 2px solid #00374d;
+        width: 40%;
+        position:absolute;
+        top: 40px;
+        left: 30%;
+    }   
+
+}
+
+@keyframes aparição-produtos {
+    0% {opacity: 0; transform: scale(0.5,0.5 ) }
+    100% {opacity: 1; transform: scale(1,1) }
+}
+
+@keyframes aparição-lateral {
+    0% {opacity: 0; transform: translate(-30px, 0px) }
+    100% {opacity: 1; transform: translate(0px,0px) }
 }
