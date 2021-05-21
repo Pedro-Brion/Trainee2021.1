@@ -1,18 +1,30 @@
 
-.quem_somos{
-    margin: 0 10% 20px 10%;
-    background-color: #f1ffe7;
+.accordion{
+    margin: 60px 8% 60px 8%;
+    color: #00374D;
+    $accordion-bg: #00374D;
 }
 
-.quem_somos h1{
-    background-color: #f1ffe7;
+.accordion h1{
+    font-size: 30px;
+    margin: 0 5% 10px 5%;
+    background-color: initial;
 }
 
-.quem_somos h2{
+.accordion h2{
+
     font-size: 24px;
     margin: 0 5% 10px 5%;
 }
 
-.accordion{
-    margin: 60px 8% 60px 8%;
+.accordion h3{
+    font-size: 24px;
+    margin: 0 8% 10px 8%;
+}
+
+.accordion .btn{
+    font-family: 'Abhaya Libre';
+    font-size: 30px;
+    text-decoration: none;
+    color: #00374D;
 }
