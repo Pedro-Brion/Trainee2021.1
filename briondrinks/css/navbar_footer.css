@@ -71,6 +71,9 @@ html, body {
 
 .footer {
     height: 180px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer h1{
