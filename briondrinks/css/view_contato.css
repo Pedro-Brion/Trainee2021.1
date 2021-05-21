@@ -21,7 +21,7 @@ html, body {
 }
 
 .contato h1 {
-    padding: 30px 5% 10px 5%;
+    padding: 60px 5% 10px 5%;
     font-size: 32px;
     font-weight: 900;
 }
@@ -39,12 +39,18 @@ html, body {
     font-family: 'Abhaya Libre';
     text-transform: uppercase;
     text-align: center;
-    padding-left: 70%;
+    margin: auto;
     padding-bottom: 20px;
     padding-top: 40px;
 }
 
+.titulo-contato {
+    padding: 40px 0 20px 0;
+    background-color: #89D1B8;
+}
+
 .title-page{
+    background-color: #89D1B8;
     font-family: 'Abhaya Libre';
     margin-left: 5px;
     margin-right: 5px;
@@ -124,6 +130,13 @@ html, body {
         top: 40px;
         left: 30%;
     }   
+
+    iframe {
+        height: 250px;
+        width: 187px;
+        resize: both;
+        overflow: auto;
+      }
 
 }
 
