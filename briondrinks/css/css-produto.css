@@ -3,10 +3,6 @@ body {
     font-family: 'Abhaya Libre', serif;
 }
 
-h1 {
-    background-color: #00374d;
-}
-
 .title-page{
     margin-left: 5px;
     margin-right: 5px;
@@ -32,12 +28,15 @@ h1 {
     width: 30%;
     border: 5px solid #00374d;
     border-radius: 10%;
+    margin-right:2%;
 }
 
 .descricao-produto{
-    width: 70%;
+    width: 68%;
     border-radius: 7%;
     padding: 2%;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 h3{
@@ -53,6 +52,7 @@ h3{
 .texto-descricao{
     font-size: 24px;
     font-weight: 400;
+    margin-bottom: 500px;
 }
 
 .borda-vertical{
@@ -61,63 +61,12 @@ h3{
     border-right: 5px solid #00374d;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.filtro-pesquisa{
-        animation-name: aparição-lateral;
-        animation-duration: 1.5s;
-}
-
 .cor-botoes{
     background-color:#00374d;
     color:#f1ffe7;
 }
 
 .cor-botoes:hover{
-    transform: scale(1.1,1.1);
-}
-
-.card-produto{
-    background-color:#00374d;
-    color: white;
-
-    animation-name: aparição-produtos;
-    animation-duration: 1.5s;
-}
-
-.card-produto:hover{
-    transform: scale(1.05,1.05);
-}
-
-.card-borda{
-    border-width: 5px;
-    border-style: solid;
-    border-color: #00374d;
-}
-
-.card-botao{
-    background-color:#00374d;
-    color:#f1ffe7;
-    font-weight:bold;
-    border: 3px solid #f1ffe7;
-}
-
-.card-botao:hover{
     transform: scale(1.1,1.1);
 }
 
@@ -138,6 +87,28 @@ h3{
 
 }
 
+@media (max-width: 768px){
+    
+    .img-produto{
+        margin-left: 35%;
+        margin-right: 35%;
+    }
+    .descricao-produto{
+        margin-left: 16%;
+        margin-right: 16%;
+        padding: 5%;
+    }
+
+    .titulos-descricao{
+        font-size: 20px;
+    }
+
+    .texto-descricao{
+        font-size: 16px;
+    }
+
+}
+
 @media (max-width: 575px){
     
     .title-page::after{
@@ -148,12 +119,6 @@ h3{
         top: 50px;
         left: 30%;
     }   
-
-    .lupa {
-        margin-top: 2%;
-        margin-left: 42%;
-    }
-
 }
 
 @media (max-width: 289px){
