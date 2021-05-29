@@ -23,7 +23,10 @@ body {
         animation-duration: 1.5s;
 }
 
-.filtro-pesquisa{
+.botao-adicionar{
+    display: flex;
+    justify-content: flex-end;
+
         animation-name: aparicao-lateral;
         animation-duration: 1.5s;
 }
@@ -33,50 +36,22 @@ body {
     color:#f1ffe7;
 }
 
+.cor-botoes:hover{
+    transform: scale(1.1,1.1);
+}
+
+.conteudo-principal{
+    animation-name: aparicao-lateral;
+    animation-duration: 1.5s;
+}
+
 .titulo-tabela{
     background-color:#00374d;
     color:#f1ffe7;
 }
 
-.foto-usuario{
-    width: 50%;
-}
-
-.cor-botoes:hover{
-    transform: scale(1.1,1.1);
-}
-
-.card-produto{
-    background-color:#00374d;
-    color: white;
-
-    animation-name: aparicao-conteudo;
-    animation-duration: 1.5s;
-}
-
-.card-produto:hover{
-    transform: scale(1.05,1.05);
-}
-
-.card-borda{
-    border-width: 5px;
-    border-style: solid;
-    border-color: #00374d;
-}
-
-.card-botao{
-    background-color:#00374d;
-    color:#f1ffe7;
-    font-weight:bold;
-    border: 3px solid #f1ffe7;
-}
-
-.card-botao:hover{
-    transform: scale(1.1,1.1);
-}
-
-.categoria-estilo{
-    font-size: 20px;
+.larguraAcao{
+    width:25%;
 }
 
 @media(max-width:768px){
@@ -84,16 +59,10 @@ body {
     .titulo-pagina{
         font-size: 150%;
     }
-    
-}
-
-@media (max-width: 575px){
-
-    .lupa {
-        margin-top: 2%;
-        margin-left: 42%;
+    .botao-adicionar{
+        justify-content: center;
     }
-
+    
 }
 
 @keyframes aparicao-conteudo {

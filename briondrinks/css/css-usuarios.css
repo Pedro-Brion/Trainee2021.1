@@ -23,11 +23,6 @@ body {
         animation-duration: 1.5s;
 }
 
-.filtro-pesquisa{
-        animation-name: aparicao-lateral;
-        animation-duration: 1.5s;
-}
-
 .cor-botoes{
     background-color:#00374d;
     color:#f1ffe7;
@@ -46,54 +41,12 @@ body {
     transform: scale(1.1,1.1);
 }
 
-.card-produto{
-    background-color:#00374d;
-    color: white;
-
-    animation-name: aparicao-conteudo;
-    animation-duration: 1.5s;
-}
-
-.card-produto:hover{
-    transform: scale(1.05,1.05);
-}
-
-.card-borda{
-    border-width: 5px;
-    border-style: solid;
-    border-color: #00374d;
-}
-
-.card-botao{
-    background-color:#00374d;
-    color:#f1ffe7;
-    font-weight:bold;
-    border: 3px solid #f1ffe7;
-}
-
-.card-botao:hover{
-    transform: scale(1.1,1.1);
-}
-
-.categoria-estilo{
-    font-size: 20px;
-}
-
 @media(max-width:768px){
 
     .titulo-pagina{
         font-size: 150%;
     }
     
-}
-
-@media (max-width: 575px){
-
-    .lupa {
-        margin-top: 2%;
-        margin-left: 42%;
-    }
-
 }
 
 @keyframes aparicao-conteudo {
