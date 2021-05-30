@@ -1,49 +1,211 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>View ADM Produtos</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="../css/main.css">
-    
-    <title>BrionDrinks</title>
+ <link href="../css/bootstrap.min.css" rel="stylesheet">
+ 
+ 
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
 
-  </head>
-  <body>
+ 
+ <div id="main" class="container-fluid" style="margin-top: 50px">
+ 
+ 	<div id="top" class="row">
+		<div class="col-sm-3">
+			<h2>Itens</h2>
+		</div>
+		<div class="col-sm-6">
+			
+			<div class="input-group h2">
+				<input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Itens">
+				<span class="input-group-btn">
+					<button class="btn btn-primary" type="submit">
+						<span class="glyphicon glyphicon-search"></span>
+					</button>
+				</span>
+			</div>
+			
+		</div>
+		<div class="col-sm-3">
+			<a href="add.html" class="btn btn-primary pull-right h2">Novo Item</a>
+		</div>
+	</div> <!-- /#top -->
+ 
+ 
+ 	<hr />
+ 	<div id="list" class="row">
+	
+	<div class="table-responsive col-md-12">
+		<table class="table table-striped" cellspacing="0" cellpadding="0">
+			<thead>
+				<tr>
+					<th>Preço(R$)</th>
+					<th>Nome</th>
+					<th>Categoria</th>
+					<th>Descrição</th>
+					<th class="actions">Ações</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>14,00</td>
+					<td>Batidas de frutas</td>
+					<td>Batido</td>
+					<td>As batidas de frutas são as receitas de drinks mais tradicionais e mais fáceis de servir no seu happy hour.</td>
+					<td class="actions">
+						<a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
+						<a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
+						<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+					</td>
+				</tr>
+				<tr>
+					<td>19,00</td>
+					<td>Gin Tônica </td>
+					<td>Montado</td>
+					<td>O clássico drink feito com Gin é super fácil de preparar (além de saboroso e refrescante!)</td>
+					<td class="actions">
+						<a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
+						<a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
+						<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+					</td>
+				</tr>
+				<tr>
+					<td>20,00</td>
+					<td>Gin Mule </td>
+					<td>Montado</td>
+					<td>O Gin Mule é uma bebida que virou tendência e que, por isso, você precisa ter no seu happy hour!.</td>
+					<td class="actions">
+						<a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
+						<a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
+						<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+					</td>
+				</tr>
+				<tr>
+					<td>29,00</td>
+					<td>Negroni </td>
+					<td>Grog</td>
+					<td>Um drink elegante e com muita tradição, que voltou a figurar como um dos favoritos nos Happy Hours!.</td>
+					<td class="actions">
+						<a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
+						<a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
+						<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+					</td>
+				</tr>
+				<tr>
+					<td>40,00</td>
+					<td>Mimosa</td>
+					<td>Julep</td>
+					<td>Receita tradicionalíssima dos brunchs e cafés da manhã requintados.</td>
+					<td class="actions">
+						<a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
+						<a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
+						<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+					</td>
+				</tr>
+				<tr>
+					<td>15,00</td>
+					<td>Caipirinha </td>
+					<td>Montado</td>
+					<td>Se existe alguma receita de drinks mais tradicional que a caipirinha, nós ainda não conhecemos.</td>
+					<td class="actions">
+						<a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
+						<a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
+						<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+					</td>
+				</tr>
+				<tr>
+					<td>17,00</td>
+					<td>Cucumber Martini</td>
+					<td>Short Drink</td>
+					<td>Gosta de vegetais no seu drink? Confira essa ousada sugestão!</td>
+					<td class="actions">
+						<a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
+						<a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
+						<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+					</td>
+				</tr>
+				<tr>
+					<td>25,00</td>
+					<td>Dry Martini </td>
+					<td>Long Drink</td>
+					<td>O famoso drink do James Bond também é uma ótima pedida para o seu Happy Hour!</td>
+					<td class="actions">
+						<a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
+						<a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
+						<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+					</td>
+				</tr>
+				<tr>
+					<td>18,00</td>
+					<td>Black Velvet </td>
+					<td>Refrescante</td>
+					<td>É cervejeiro? Temos uma receita de drinks especial para você também!</td>
+					<td class="actions">
+						<a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
+						<a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
+						<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+					</td>
+				</tr>
+				<tr>
+					<td>30,00</td>
+					<td>Manhattan </td>
+					<td>Grog</td>
+					<td>Quer servir algo mais elegante e de personalidade? Invista no Manhattan.</td>
+					<td class="actions">
+						<a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
+						<a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
+						<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	</div> <!-- /#list -->
+	
+	<div id="bottom" class="row">
+		<div class="col-md-12">
+			<ul class="pagination">
+				<li class="disabled"><a>&lt; Anterior</a></li>
+				<li class="disabled"><a>1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li class="next"><a href="#" rel="next">Próximo &gt;</a></li>
+			</ul><!-- /.pagination -->
+		</div>
+	</div> <!-- /#bottom -->
+ </div> <!-- /#main -->
 
-    
-
-    <div class="text-center mt-5">
-        <form style="max-width: 300px;margin:auto;">
-        <img class="mt-4 mb-2" src="../img/drinks.jpg" height="90" alt="logo">
-    <h1 class="h3 mb-3 font-weight-normal">LOGIN</h1>
-    <input type="email" id="endereço de email" class="form-control mb-3"placeholder="email" required autofocus>
-    <input type="senha" id="senha" placeholder="senha" class="form-control">
-    <div class="checkbox mt-3">
-        <label>
-            <input type="checkbox" value="lembre-se de mim"> Lembre-se de mim
-        </label>
+<!-- Modal -->
+<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="modalLabel">Excluir Item</h4>
+      </div>
+      <div class="modal-body">
+        Deseja realmente excluir este item?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Sim</button>
+ <button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
+      </div>
     </div>
-    <div class="mt-3">
-        <button  class="btn btn-lg btn-primary btn-block form-control"> LOGIN</button>
-    </div>
-</form>
-</div>
+  </div>
+</div> 
+<!-- /.modal -->
 
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-    -->
-  </body>
-</html>
+ <script src="js/jquery.min.js"></script>
+ <script src="js/bootstrap.min.js"></script>
+</body>
+</html>                           
