@@ -33,8 +33,15 @@ body {
     color:#f1ffe7;
 }
 
+.linha-foto{
+    width: 25%;
+}
+
 .foto-usuario{
-    width: 50%;
+    width: 100%;
+}
+
+.larguraAcao{
 }
 
 .cor-botoes:hover{
