@@ -1,5 +1,5 @@
 body {   
-    background-color: #f1ffe7;
+    background-color: #edeeff;
     font-family: 'Abhaya Libre', serif;
 }
 
@@ -30,7 +30,7 @@ body {
 
 .cor-botoes{
     background-color:#00374d;
-    color:#f1ffe7;
+    color:#edeeff;
 }
 
 .cor-botoes:hover{
@@ -57,9 +57,9 @@ body {
 
 .card-botao{
     background-color:#00374d;
-    color:#f1ffe7;
+    color:#edeeff;
     font-weight:bold;
-    border: 3px solid #f1ffe7;
+    border: 3px solid #edeeff;
 }
 
 .card-botao:hover{
