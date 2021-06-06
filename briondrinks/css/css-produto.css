@@ -1,5 +1,5 @@
 body {   
-    background-color: #f1ffe7;
+    background-color: #edeeff;
     font-family: 'Abhaya Libre', serif;
 }
 
@@ -25,7 +25,7 @@ body {
 
 .cor-botoes{
     background-color:#00374d;
-    color:#f1ffe7;
+    color:#edeeff;
 }
 
 .cor-botoes:hover{
