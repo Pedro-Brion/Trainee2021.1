@@ -50,9 +50,15 @@ body {
     color:#f1ffe7;
 }
 
-.larguraAcao{
-    width:25%;
+.larguraCategoria{
+    width: 85%;
 }
+
+.larguraAcao{
+    width:15%;
+}
+
+
 
 @media(max-width:768px){
 
