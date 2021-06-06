@@ -40,7 +40,7 @@
     <div class="linhaHorizontal mb-5"></div>
 
 <!-- BOTÃO ADICIONAR -->
-<div class="container botao-adicionar mb-3">
+<div class="container botao-adicionar mb-3" data-toggle="modal" data-target="#modalAdicionar">
     <button type="button" class="btn cor-botoes">Adicionar</button>
 </div>
 
@@ -51,45 +51,97 @@
             <tr>
                 <th scope="col"class="titulo-tabela linha-foto">Foto</th>
                 <th scope="col"class="titulo-tabela">Nome</th>
-                <th scope="col"class="titulo-tabela">Email</th>
-                <th scope="col"class="titulo-tabela">Senha</th>
-                <th scope="col"class="titulo-tabela larguraAcao linhaAcao">Ação</th>
+                <th scope="col"class="titulo-tabela colunaEmailSenha">Email</th>
+                <th scope="col"class="titulo-tabela colunaEmailSenha">Senha</th>
+                <th scope="col"class="titulo-tabela larguraAcao">Ação</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <th scope="row" class="d-flex justify-content-center tamanho-linha-foto"><img src="../img/barney.jpg" alt="Foto do Usuário" class="foto-usuario"></th>
+                <th scope="row"><img src="../img/barney.jpg" alt="Foto do Usuário" class="foto-usuario"></th>
                 <td class="align-middle">Barney Stinson</td>
-                <td class="align-middle">barney.awesome@himym.com</td>
-                <td class="align-middle">brocode69</td>
-                <td class="d-flex justify-content-around">
-                    <button type="button" class="btn cor-botoes"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                    <button type="button" class="btn cor-botoes ml-1"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                <td class="align-middle colunaEmailSenha">barney.awesome@himym.com</td>
+                <td class="align-middle colunaEmailSenha">brocode69</td>
+                <td class="align-middle">
+                    <div class="btn-group d-flex justify-content-center" role="group">
+                        <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalAdicionar"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                        <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluir"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                    </div>        
                 </td>
             </tr>
             <tr>
-                <th scope="row" class="d-flex justify-content-center"><img src="../img/ted.jpg" alt="Foto do Usuário" class="foto-usuario"></th>
+                <th scope="row"><img src="../img/ted.jpg" alt="Foto do Usuário" class="foto-usuario"></th>
                 <td class="align-middle">Ted Mosby</td>
-                <td class="align-middle">ted.architect@himym</td>
-                <td class="align-middle">soqueroumamor1978</td>
-                <td class="d-flex justify-content-around">
-                    <button type="button" class="btn cor-botoes"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                    <button type="button" class="btn cor-botoes ml-1"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                <td class="align-middle colunaEmailSenha">ted.architect@himym</td>
+                <td class="align-middle colunaEmailSenha">soqueroumamor1978</td>
+                <td class="align-middle">
+                    <div class="btn-group d-flex justify-content-center" role="group">
+                        <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalAdicionar"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                        <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluir"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                    </div>        
                 </td>
             </tr>
             <tr>
-                <th scope="row" class="d-flex justify-content-center"><img src="../img/marshall.jpg" alt="Foto do Usuário" class="foto-usuario"></th>
+                <th scope="row"><img src="../img/marshall.jpg" alt="Foto do Usuário" class="foto-usuario"></th>
                 <td class="align-middle">Marshall Eriksen</td>
-                <td class="align-middle">marshallandlilly@himym</td>
-                <td class="align-middle">lillypads2</td>
-                <td class="d-flex justify-content-around">
-                    <button type="button" class="btn cor-botoes"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                    <button type="button" class="btn cor-botoes ml-1"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                <td class="align-middle colunaEmailSenha">marshallandlilly@himym</td>
+                <td class="align-middle colunaEmailSenha">lillypads2</td>
+                <td class="align-middle">
+                    <div class="btn-group d-flex justify-content-center" role="group">
+                        <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalAdicionar"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                        <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluir"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                    </div>        
                 </td>
             </tr>
             </tbody>
         </table>
     </div>
+
+<!-- MODAL -->
+<div class="modal fade" id="modalExcluir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><strong>Exclusão de Usuário</strong></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Tem certeza que deseja excluir este usuário?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-danger">Excluir</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalAdicionar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Adicionar Usuário</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+              <div class="form-group">
+                <label for="inputEmail4">Nome:</label>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Nome">
+              </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn cor-botoes">Salvar Alterações</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <!-- FOOTER -->
     <div class="footer">

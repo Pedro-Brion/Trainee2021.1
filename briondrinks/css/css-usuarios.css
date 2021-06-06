@@ -28,6 +28,18 @@ body {
     color:#f1ffe7;
 }
 
+.cor-botoes:hover{
+    transform: scale(1.1,1.1);
+}
+
+.botao-adicionar{
+    display: flex;
+    justify-content: flex-end;
+
+        animation-name: aparicao-lateral;
+        animation-duration: 1.5s;
+}
+
 .titulo-tabela{
     background-color:#00374d;
     color:#f1ffe7;
@@ -45,14 +57,14 @@ body {
     width: 15%;
 }
 
-.cor-botoes:hover{
-    transform: scale(1.1,1.1);
-}
-
 @media(max-width:768px){
 
     .titulo-pagina{
         font-size: 150%;
+    }
+
+    .colunaEmailSenha{
+        display: none;
     }
     
 }
