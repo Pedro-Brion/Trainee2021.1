@@ -17,6 +17,11 @@
         animation-duration: 1.5s;
 }
 
+.conteudo-principal{
+    animation-name: aparicao-lateral;
+    animation-duration: 1.5s;
+}
+
 .titulo-tabela{
     background-color:#00374d;
     color:#edeeff;
@@ -28,6 +33,10 @@
 
 .foto-tabela{
     width: 100%;
+}
+
+.larguraCategoria{
+    width: 85%;
 }
 
 .larguraAcao{
@@ -42,6 +51,10 @@
 
     .colunasInvisiveis{
         display: none;
+    }
+
+    .botao-adicionar{
+        justify-content: center;
     }
     
 }
