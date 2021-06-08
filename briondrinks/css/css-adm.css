@@ -1,0 +1,47 @@
+.titulo-pagina{
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 200%;
+    text-align: center;
+    color:#00374d;
+    
+        animation-name: aparicao-lateral;
+        animation-duration: 1.5s;
+}
+
+.botao-adicionar{
+    display: flex;
+    justify-content: flex-end;
+
+        animation-name: aparicao-lateral;
+        animation-duration: 1.5s;
+}
+
+.titulo-tabela{
+    background-color:#00374d;
+    color:#edeeff;
+}
+
+.linha-foto{
+    width: 25%;
+}
+
+.foto-tabela{
+    width: 100%;
+}
+
+.larguraAcao{
+    width: 15%;
+}
+
+@media(max-width:768px){
+
+    .titulo-pagina{
+        font-size: 150%;
+    }
+
+    .colunasInvisiveis{
+        display: none;
+    }
+    
+}
