@@ -5,6 +5,17 @@ html, body {
     font-family: 'Abhaya Libre', serif;
 }
 
+.titulo-pagina{
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 200%;
+    text-align: center;
+    color:#00374d;
+    
+        animation-name: aparicao-lateral;
+        animation-duration: 1.5s;
+}
+
 .linhaHorizontal{
     width: 15%;
     border-top: 3px solid #00374d;
@@ -12,6 +23,11 @@ html, body {
 
         animation-name: aparicao-lateral;
         animation-duration: 1.5s;
+}
+
+.conteudo-principal{
+    animation-name: aparicao-lateral;
+    animation-duration: 1.5s;
 }
 
 .cor-botoes{
@@ -23,8 +39,16 @@ html, body {
     transform: scale(1.1,1.1);
 }
 
+@media(max-width:768px){
+
+    .titulo-pagina{
+        font-size: 150%;
+    }
+    
+}
+
 /* NAVBAR */
-.navbar, .footer {
+.cor-navbar, .footer {
     background-color: #00374D;
 }
 
