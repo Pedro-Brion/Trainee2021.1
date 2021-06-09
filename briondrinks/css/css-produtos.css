@@ -1,48 +1,14 @@
-body {   
-    background-color: #edeeff;
-    font-family: 'Abhaya Libre', serif;
-}
-
-.titulo-pagina{
-    margin-left: 5px;
-    margin-right: 5px;
-    font-size: 200%;
-    text-align: center;
-    color:#00374d;
-    
-        animation-name: aparicao-lateral;
-        animation-duration: 1.5s;
-}
-
-.linhaHorizontal{
-    width: 15%;
-    border-top: 3px solid #00374d;
-    margin-left: 42.5%;
-
-        animation-name: aparicao-lateral;
-        animation-duration: 1.5s;
-}
-
 .filtro-pesquisa{
         animation-name: aparicao-lateral;
         animation-duration: 1.5s;
-}
-
-.cor-botoes{
-    background-color:#00374d;
-    color:#edeeff;
-}
-
-.cor-botoes:hover{
-    transform: scale(1.1,1.1);
 }
 
 .card-produto{
     background-color:#00374d;
     color: white;
 
-    animation-name: aparicao-conteudo;
-    animation-duration: 1.5s;
+        animation-name: aparicao-conteudo;
+        animation-duration: 1.5s;
 }
 
 .card-produto:hover{
@@ -66,14 +32,6 @@ body {
     transform: scale(1.1,1.1);
 }
 
-@media(max-width:768px){
-
-    .titulo-pagina{
-        font-size: 150%;
-    }
-    
-}
-
 @media (max-width: 575px){
 
     .lupa {
@@ -81,14 +39,4 @@ body {
         margin-left: 42%;
     }
 
-}
-
-@keyframes aparicao-conteudo {
-    0% {opacity: 0; transform: scale(0.5,0.5 ) }
-    100% {opacity: 1; transform: scale(1,1) }
-}
-
-@keyframes aparicao-lateral {
-    0% {opacity: 0; transform: translate(-30px, 0px) }
-    100% {opacity: 1; transform: translate(0px,0px) }
 }
