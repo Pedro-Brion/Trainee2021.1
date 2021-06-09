@@ -99,10 +99,11 @@ html, body {
     cursor: pointer;
 }
 
-/* FOOTER */
 
+/* FOOTER */
 .footer {
     height: 180px;
+    color: black;
 }
 
 .footer h1{
