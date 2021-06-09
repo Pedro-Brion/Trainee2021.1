@@ -1,0 +1,42 @@
+.filtro-pesquisa{
+        animation-name: aparicao-lateral;
+        animation-duration: 1.5s;
+}
+
+.card-produto{
+    background-color:#00374d;
+    color: white;
+
+        animation-name: aparicao-conteudo;
+        animation-duration: 1.5s;
+}
+
+.card-produto:hover{
+    transform: scale(1.05,1.05);
+}
+
+.card-borda{
+    border-width: 5px;
+    border-style: solid;
+    border-color: #00374d;
+}
+
+.card-botao{
+    background-color:#00374d;
+    color:#edeeff;
+    font-weight:bold;
+    border: 3px solid #edeeff;
+}
+
+.card-botao:hover{
+    transform: scale(1.1,1.1);
+}
+
+@media (max-width: 575px){
+
+    .lupa {
+        margin-top: 2%;
+        margin-left: 42%;
+    }
+
+}
