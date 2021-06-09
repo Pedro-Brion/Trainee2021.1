@@ -9,4 +9,8 @@
             border-top-right-radius:0px;
             border-top:0px;
         }
-        
+
+.borda-login{
+    border: 3px solid #00374d;
+    border-radius: 10%;
+}
