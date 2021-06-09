@@ -1,0 +1,44 @@
+.botao-adicionar{
+    display: flex;
+    justify-content: flex-end;
+
+        animation-name: aparicao-lateral;
+        animation-duration: 1.5s;
+}
+
+.titulo-tabela{
+    background-color:#00374d;
+    color:#edeeff;
+}
+
+.linha-foto{
+    width: 25%;
+}
+
+.foto-tabela{
+    width: 100%;
+}
+
+.larguraCategoria{
+    width: 85%;
+}
+
+.larguraAcao{
+    width: 15%;
+}
+
+@media(max-width:768px){
+
+    .titulo-pagina{
+        font-size: 150%;
+    }
+
+    .colunasInvisiveis{
+        display: none;
+    }
+
+    .botao-adicionar{
+        justify-content: center;
+    }
+    
+}

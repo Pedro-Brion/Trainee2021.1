@@ -1,10 +1,54 @@
 html, body {
     margin: 0px;
     padding: 0px;
+    background-color: #edeeff;
     font-family: 'Abhaya Libre', serif;
 }
 
-.navbar, .footer {
+.titulo-pagina{
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 200%;
+    text-align: center;
+    color:#00374d;
+    
+        animation-name: aparicao-lateral;
+        animation-duration: 1.5s;
+}
+
+.linhaHorizontal{
+    width: 15%;
+    border-top: 3px solid #00374d;
+    margin-left: 42.5%;
+
+        animation-name: aparicao-lateral;
+        animation-duration: 1.5s;
+}
+
+.conteudo-principal{
+    animation-name: aparicao-lateral;
+    animation-duration: 1.5s;
+}
+
+.cor-botoes{
+    background-color:#00374d;
+    color:#edeeff;
+}
+
+.cor-botoes:hover{
+    transform: scale(1.1,1.1);
+}
+
+@media(max-width:768px){
+
+    .titulo-pagina{
+        font-size: 150%;
+    }
+    
+}
+
+/* NAVBAR */
+.cor-navbar, .footer {
     background-color: #00374D;
 }
 
@@ -54,6 +98,8 @@ html, body {
     display: none;
     cursor: pointer;
 }
+
+/* FOOTER */
 
 .footer {
     height: 180px;
@@ -192,4 +238,14 @@ html, body {
     margin-top: 0;
 }
     
+}
+
+@keyframes aparicao-conteudo {
+    0% {opacity: 0; transform: scale(0.5,0.5 ) }
+    100% {opacity: 1; transform: scale(1,1) }
+}
+
+@keyframes aparicao-lateral {
+    0% {opacity: 0; transform: translate(-30px, 0px) }
+    100% {opacity: 1; transform: translate(0px,0px) }
 }
