@@ -5,7 +5,7 @@ function openNav()
 
     if(x.className === "navbar")
     {
-        x.className = "navbar menujs";
+        x.className = "navbar cor-navbar menujs";
         y.innerHTML = "&Cross;"; // mudar para x
     }
     else
