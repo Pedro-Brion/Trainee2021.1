@@ -1,0 +1,11 @@
+.tituloMapa{
+    font-size: 200%;
+    color: #00374d;
+    text-align: center;
+
+}
+
+.mapa{
+    width: 100%;
+    height: 500px;
+}

@@ -1,0 +1,16 @@
+
+        input[type="email"]{
+            border-bottom-left-radius:0px;
+            border-bottom-right-radius:0px;
+            
+        }
+        input[type="senha"]{
+            border-top-left-radius:0px;
+            border-top-right-radius:0px;
+            border-top:0px;
+        }
+
+.borda-login{
+    border: 3px solid #00374d;
+    border-radius: 10%;
+}
