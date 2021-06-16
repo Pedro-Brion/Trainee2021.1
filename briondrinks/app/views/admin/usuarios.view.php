@@ -57,10 +57,11 @@
             </tr>
             </thead>
             <tbody>
+            <?php foreach ($usuarios as $usuario) : ?>
             <tr>
                 <th scope="row"><img src="../../../public/img/barney.jpg" alt="Foto do Usuário" class="foto-tabela"></th>
-                <td class="align-middle">Barney Stinson</td>
-                <td class="align-middle colunasInvisiveis">barney.awesome@himym.com</td>
+                <td class="align-middle"><?= $usuario->nome; ?></td>
+                <td class="align-middle colunasInvisiveis"><?= $usuario->email; ?></td>
                 <td class="align-middle colunasInvisiveis">brocode69</td>
                 <td class="align-middle">
                     <div class="btn-group d-flex justify-content-center" role="group">
@@ -69,6 +70,7 @@
                     </div>        
                 </td>
             </tr>
+            <?php endforeach; ?>
             <tr>
                 <th scope="row"><img src="../../../public/img/ted.jpg" alt="Foto do Usuário" class="foto-tabela"></th>
                 <td class="align-middle">Ted Mosby</td>
@@ -128,15 +130,15 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form method="POST" action="/usuarios">
                     <div class="form-group">
                         <label for="inputEmail4">Nome:</label>
-                        <input type="text" class="form-control" id="validationCustom01" placeholder="Nome" required>
+                        <input name="nome" type="text" class="form-control" id="validationCustom01" placeholder="Nome" required>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Email</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email" required> 
+                            <input name="nome" type="email" class="form-control" id="inputEmail4" placeholder="Email" required> 
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">Senha</label>
@@ -147,12 +149,13 @@
                             <input type="file" class="custom-file-input" id="customFile">
                             <label class="custom-file-label" for="customFile">Escolher foto</label>
                     </div>
-                </form>
+                
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn cor-botoes">Salvar Alterações</button>
+                <button type="submit" class="btn cor-botoes">Salvar Alterações</button>
             </div>
+                </form>
         </div>
     </div>
 </div>

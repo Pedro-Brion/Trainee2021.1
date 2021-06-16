@@ -1,3 +1,6 @@
 <?php
 
-// Aqui vai o arquivo de ROTAS
+$router->get('usuarios','UsuariosController@view');
+$router->post('usuarios','UsuariosController@adicionar');
+
+?>
