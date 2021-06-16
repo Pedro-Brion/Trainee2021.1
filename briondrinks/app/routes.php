@@ -1,3 +1,5 @@
 <?php
 
-// Aqui vai o arquivo de ROTAS
+$router->get('produtos','ProdutosController@view');
+
+?>

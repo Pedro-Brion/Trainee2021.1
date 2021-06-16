@@ -1,0 +1,4 @@
+{
+    "phpcs.showWarnings": false,
+    "phpcs.errorSeverity": 6,
+}
