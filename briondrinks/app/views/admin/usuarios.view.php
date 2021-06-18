@@ -66,7 +66,7 @@
                 <td class="align-middle">
                     <div class="btn-group d-flex justify-content-center" role="group">
                         <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalEditar"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                        <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluir"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluir<?= $usuario->id ?>"><i class="fa fa-trash" aria-hidden="true"></i></button>
                     </div>        
                 </td>
             </tr>
@@ -99,8 +99,9 @@
         </table>
     </div>
 
+<?php foreach ($usuarios as $usuario) : ?>
 <!-- MODAL -->
-<div class="modal fade" id="modalExcluir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalExcluir<?= $usuario->id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -201,6 +202,7 @@
         </div>
     </div>
 </div>
+<?php endforeach; ?>
 
 <!-- SCRIPTS -->
     <script type="text/javascript" src="../js/scripts.js"></script>
