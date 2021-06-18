@@ -16,14 +16,21 @@ class UsuariosController
 
     public function adicionar()
     {
-        $parameters = [
+        $parametros = [
             'nome' => $_POST['nome'],
-            'email'=>$_POST['email']
+            'email'=> $_POST['email']
         ];
 
-        App::get('database')->insert('tarefas', $_POST['nome'], $_POST['email']);
+        App::get('database')->insert('usuarios', $parametros);
 
-        header('Location: /inicio');
+        header('Location: /usuarios');
+    }
+
+    public function apagar()
+    {
+        App::get('database')->delete('usuarios', $_POST['id']);
+
+        header('Location: /usuarios');
     }
 
 }

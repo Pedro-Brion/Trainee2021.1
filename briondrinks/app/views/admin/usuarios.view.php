@@ -114,7 +114,10 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-danger">Excluir</button>
+          <form action="/usuarios/delete" method="POST">
+            <input type="hidden" value="<?= $usuario->id ?>" name="id">
+            <button type="submit" class="btn btn-danger">Excluir</button>
+          </form>
         </div>
       </div>
     </div>
@@ -138,7 +141,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Email</label>
-                            <input name="nome" type="email" class="form-control" id="inputEmail4" placeholder="Email" required> 
+                            <input name="email" type="email" class="form-control" id="inputEmail4" placeholder="Email" required> 
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">Senha</label>
