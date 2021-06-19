@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="../../../public/css/css-adm.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -98,8 +97,11 @@
           Tem certeza que deseja excluir este produto?
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-danger">Excluir</button>
+            <button type="button" class="btn" data-dismiss="modal">Cancelar</button>
+            <form action="/produtos/delete" method="POST">
+                <input type="hidden" value="<?= $produto->id ?>" name="id">
+                <button type="button" class="btn btn-danger">Excluir</button>
+            </form>
         </div>
       </div>
     </div>
@@ -115,12 +117,10 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form method="POST" action="/produtos">
                     <div class="form-group">
                    
-                        <label for="campo1">Nome:<?= $produto->nome; ?></label>
-                        
-                        <form method="POST" action="/produtos">
+                        <label for="campo1">Nome:</label>
                         <input type="text" name="nome" class="form-control" id="campo1" placeholder="Nome" required>
                     
                 
@@ -149,11 +149,9 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn" data-dismiss="modal">Cancelar</button>
-                <form method="POST" action="/produtos">
-                
                 <button type="submit" class="btn cor-botoes">Salvar Alterações</button>
-                    </form>
             </div>
+            </form>
         </div>
     </div>
 </div>
@@ -193,12 +191,12 @@
                             <label class="custom-file-label" for="customFile">Escolher foto</label>
                     </div>
             </div>
-            <div class="modal-footer">
+                <div class="modal-footer">
                 <button type="button" class="btn" data-dismiss="modal">Cancelar</button>
                     <input type="hidden" value="<?= $produto->id ?>" name="id">
-                    <button type="submit" class="btn cor-botoes">Salvar Alterações</button>
+                    <button type="submit" class="btn cor-botoes">Salvar Alterações</button>    
+                </div>
                 </form>
-            </div>
         </div>
     </div>
 </div>
