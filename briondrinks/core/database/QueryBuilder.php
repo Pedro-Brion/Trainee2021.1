@@ -24,7 +24,7 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
-    public function insert ($table, $parametros)
+    public function insertUsuarios ($table, $parametros)
     {
         $sql = "INSERT INTO `{$table}` (`nome`,`email`,`senha`,`foto`) VALUES ('{$parametros['nome']}','{$parametros['email']}','{$parametros['senha']}','{$parametros['foto']}')";
         //$sql = "INSERT INTO `{$table}` (`nome`, `email`) VALUES ('Barney Stinson', 'barneyincrivel@himym.com')";
@@ -56,7 +56,7 @@ class QueryBuilder
 
     }
 
-    public function update ($table, $parametros, $id)
+    public function updateUsuarios ($table, $parametros, $id)
     {
         //$sql = "INSERT INTO `{$table}` (`nome`,`email`,`senha`) VALUES ('{$parametros['nome']}','{$parametros['email']}','{$parametros['senha']}')";
         //$sql = "UPDATE `usuarios` SET `id`='[value-1]',`nome`='[value-2]',`email`='[value-3]',`senha`='[value-4]' WHERE 1";
@@ -68,6 +68,67 @@ class QueryBuilder
 
             $stmt->execute();
             
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+
+    }
+
+    public function insertCategorias ($table, $parametros)
+    {
+        $sql = "INSERT INTO `{$table}` (`nome`) VALUES ('{$parametros['nome']}')";
+        try {
+            $stmt = $this->pdo->prepare($sql);
+
+            $stmt->execute();
+            
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+
+    }
+
+    public function updateCategorias ($table, $parametros, $id)
+    {
+        $sql = "UPDATE `{$table}` SET `nome`='{$parametros['nome']}' WHERE id = {$id}";
+        
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+
+            $stmt->execute();
+            
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+
+    }
+
+    public function insertProdutos ($table, $parametros)
+    {
+        $sql = "INSERT INTO {$table} (nome,descricao,categoria,preco) VALUES ('{$parametros['nome']}','{$parametros['descricao']}','{$parametros['categoria']}','{$parametros['preco']}')";
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+
+            $stmt->execute();
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+
+    }
+
+    public function updateProdutos ($table, $parametros, $id)
+    {
+        $sql = "UPDATE {$table} SET nome='{$parametros['nome']}',descricao='{$parametros['descricao']}',categoria='{$parametros['categoria']}', preco='{$parametros['preco']}' WHERE id = {$id}";
+
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+
+            $stmt->execute();
+
         } catch (Exception $e) {
             die($e->getMessage());
         }

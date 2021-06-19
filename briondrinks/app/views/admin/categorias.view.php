@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/css-adm.css">
+    <link rel="stylesheet" href="../../../public/css/css-adm.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="imagem/png" href="../img/logo.png" />
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="imagem/png" href="../../../public/img/logo.png" />
+    <link rel="stylesheet" href="../../../public/css/styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Categorias</title>
@@ -19,19 +19,19 @@
 <!-- NAVBAR-->
     <div id="navbar" class="navbar cor-navbar">
         <div class="logo-esq">
-            <img src="../img/5.png" alt="Logo da empresa Brion Drinks e Coquetelaria">
+            <img src="../../../public/img/5.png" alt="Logo da empresa Brion Drinks e Coquetelaria">
         </div>
-        
+  
         <ul>
-            <li><a href="view-adm-usuarios.html">Usuários</a></li>
-            <li><a href="view-produtos.html">Produtos</a></li>
-            <li><a href="view-adm-categorias.html">Categorias</a></li>
-            <li><a href="view_login.html">Sair</a></li>
+            <li><a href="/usuarios">Usuários</a></li>
+            <li><a href="/produtos">Produtos</a></li>
+            <li><a href="/categorias">Categorias</a></li>
+            <li><a href="/login">Sair</a></li>
             <li id="menu-icon" class="menu-icon" onclick="openNav()">&#x1F378; Menu</li>
         </ul>
 
         <div class="logo-dir">
-            <img src="../img/5.png" alt="Logo da empresa Brion Drinks e Coquetelaria">
+            <img src="../../../public/img/5.png" alt="Logo da empresa Brion Drinks e Coquetelaria">
         </div>
     </div>
 
@@ -54,39 +54,24 @@
             </tr>
             </thead>
             <tbody>
+            <?php foreach ($categorias as $categoria) : ?>
             <tr>
-                <td class="align-middle larguraCategoria">Categoria Genérica 1</td>
+                <td class="align-middle larguraCategoria"><?= $categoria->categoria; ?></td>
                 <td>
                     <div class="btn-group d-flex justify-content-center" role="group">
-                        <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalAdicionar"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                        <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluir"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalEditar<?= $categoria->id ?>"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                        <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluir<?= $categoria->id ?>"><i class="fa fa-trash" aria-hidden="true"></i></button>
                     </div>        
                 </td>
             </tr>
-            <tr>
-                <td class="align-middle larguraCategoria">Categoria Genérica 2</td>
-                <td>
-                    <div class="btn-group d-flex justify-content-center" role="group">
-                        <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalAdicionar"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                        <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluir"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                    </div>        
-                </td>
-            </tr>
-            <tr>
-                <td class="align-middle larguraCategoria">Categoria Genérica 3</td>
-                <td>
-                    <div class="btn-group d-flex justify-content-center" role="group">
-                        <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalAdicionar"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                        <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluir"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                    </div>        
-                </td>
-            </tr>
+            <?php endforeach; ?>
             </tbody>
         </table>
     </div>
 
+<?php foreach ($categorias as $categoria) : ?>
 <!-- MODAL -->
-<div class="modal fade" id="modalExcluir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalExcluir<?= $categoria->id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -100,7 +85,10 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-danger">Excluir</button>
+          <form action="/categorias/delete" method="POST">
+            <input type="hidden" value="<?= $categoria->id ?>" name="id">
+            <button type="submit" class="btn btn-danger">Excluir</button>
+          </form>
         </div>
       </div>
     </div>
@@ -116,22 +104,22 @@
           </button>
         </div>
         <div class="modal-body">
-          <form>
+          <form method="POST" action="/categorias">
               <div class="form-group">
                 <label for="inputEmail4">Nome:</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Categoria">
+                <input name="categoria" type="text" class="form-control" id="inputEmail4" placeholder="Categoria" required>
               </div>
-            </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn cor-botoes">Salvar Alterações</button>
+          <button type="submit" class="btn cor-botoes">Adicionar</button>
         </div>
+          </form>
       </div>
     </div>
   </div>
 
-  <div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="modalEditar<?= $categoria->id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -141,21 +129,22 @@
           </button>
         </div>
         <div class="modal-body">
-          <form>
+          <form action="/categorias/update" method="POST">
               <div class="form-group">
                 <label for="inputEmail4">Nome:</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Categoria">
+                <input name="categoria" type="text" class="form-control" id="inputEmail4" placeholder="Categoria" value="<?= $categoria->nome ?>" required>
               </div>
-            </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn cor-botoes">Salvar Alterações</button>
+          <input type="hidden" value="<?= $categoria->id ?>" name="id">
+          <button type="submit" class="btn cor-botoes">Salvar Alterações</button>
         </div>
+        </form>
       </div>
     </div>
   </div>
-
+<?php endforeach; ?>
 <!-- SCRIPTS -->
     <script type="text/javascript" src="../js/scripts.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

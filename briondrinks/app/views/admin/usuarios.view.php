@@ -23,10 +23,10 @@
         </div>
         
         <ul>
-            <li><a href="view-adm-usuarios.html">Usuários</a></li>
-            <li><a href="view-adm-produtos.html">Produtos</a></li>
-            <li><a href="view-adm-categorias.html">Categorias</a></li>
-            <li><a href="view_login.html">Sair</a></li>
+            <li><a href="/usuarios">Usuários</a></li>
+            <li><a href="/produtos">Produtos</a></li>
+            <li><a href="/categorias">Categorias</a></li>
+            <li><a href="/login">Sair</a></li>
             <li id="menu-icon" class="menu-icon" onclick="openNav()">&#x1F378; Menu</li>
         </ul>
 
@@ -133,7 +133,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn" data-dismiss="modal">Cancelar</button>
-                <button type="submit" class="btn cor-botoes">Salvar Alterações</button>
+                <button type="submit" class="btn cor-botoes">Adicionar</button>
             </div>
                 </form>
         </div>

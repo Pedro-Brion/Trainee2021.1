@@ -23,7 +23,7 @@ class UsuariosController
             'foto'=> $_POST['foto']
         ];
 
-        App::get('database')->insert('usuarios', $parametros);
+        App::get('database')->insertUsuarios('usuarios', $parametros);
 
         header('Location: /usuarios');
     }
@@ -44,9 +44,97 @@ class UsuariosController
             'foto'=> $_POST['foto']
         ];
 
-        App::get('database')->update('usuarios', $parametros, $_POST['id']);
+        App::get('database')->updateUsuarios('usuarios', $parametros, $_POST['id']);
 
         header('Location: /usuarios');
     }
 
 }
+
+class CategoriasController
+{
+
+    public function view()
+    {
+        $categorias = App::get('database')->selectAll('categorias');
+
+        return view('categorias',compact('categorias'));
+    }
+
+    public function adicionar()
+    {
+        $parametros = [
+            'categoria' => $_POST['categoria']
+        ];
+
+        App::get('database')->insertCategorias('categorias', $parametros);
+
+        header('Location: /categorias');
+    }
+
+    public function apagar()
+    {
+        App::get('database')->delete('categorias', $_POST['id']);
+
+        header('Location: /categorias');
+    }
+
+    public function update()
+    {
+        $parametros = [
+            'nome' => $_POST['nome']
+        ];
+
+        App::get('database')->updateCategorias('categorias', $parametros, $_POST['id']);
+
+        header('Location: /categorias');
+    }
+
+}
+
+class ProdutosController
+{
+
+    public function view()
+    {
+        $produtos = App::get('database')->selectAll('produtos');
+        return view('produtos',compact('produtos'));
+    }
+
+    public function create()
+    {
+        $parametros = [
+            'nome' => $_POST['nome'],
+            'descricao' => $_POST['descricao'],
+            'categoria' => $_POST['categoria'],
+            'preco'=> $_POST['preco']
+        ];
+
+        App::get('database')->insertProdutos('produtos', $parametros);
+
+        header('Location: /produtos');
+    }
+
+    public function delete()
+    {
+        App::get('database')->delete('produtos', $_POST['id']);
+
+        header('Location: /produtos');
+    }
+
+    public function update()
+    {
+        $parametros = [
+            'nome' => $_POST['nome'],
+            'descricao'=> $_POST['descricao'],
+            'categoria'=> $_POST['categoria'],
+            'preco'=> $_POST['preco']
+        ];
+
+        App::get('database')->updateProdutos('produtos', $parametros, $_POST['id']);
+
+        header('Location: /produtos');
+    }
+}
+
+
