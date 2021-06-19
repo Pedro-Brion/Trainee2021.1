@@ -62,39 +62,15 @@
                 <th scope="row"><img src="../../../public/img/barney.jpg" alt="Foto do Usuário" class="foto-tabela"></th>
                 <td class="align-middle"><?= $usuario->nome; ?></td>
                 <td class="align-middle colunasInvisiveis"><?= $usuario->email; ?></td>
-                <td class="align-middle colunasInvisiveis">brocode69</td>
+                <td class="align-middle colunasInvisiveis"><?= $usuario->senha; ?></td>
                 <td class="align-middle">
                     <div class="btn-group d-flex justify-content-center" role="group">
-                        <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalEditar"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                        <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalEditar<?= $usuario->id ?>"><i class="fa fa-pencil" aria-hidden="true"></i></button>
                         <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluir<?= $usuario->id ?>"><i class="fa fa-trash" aria-hidden="true"></i></button>
                     </div>        
                 </td>
             </tr>
             <?php endforeach; ?>
-            <tr>
-                <th scope="row"><img src="../../../public/img/ted.jpg" alt="Foto do Usuário" class="foto-tabela"></th>
-                <td class="align-middle">Ted Mosby</td>
-                <td class="align-middle colunasInvisiveis">ted.architect@himym</td>
-                <td class="align-middle colunasInvisiveis">soqueroumamor1978</td>
-                <td class="align-middle">
-                    <div class="btn-group d-flex justify-content-center" role="group">
-                        <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalEditar"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                        <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluir"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                    </div>        
-                </td>
-            </tr>
-            <tr>
-                <th scope="row"><img src="../../../public/img/marshall.jpg" alt="Foto do Usuário" class="foto-tabela"></th>
-                <td class="align-middle">Marshall Eriksen</td>
-                <td class="align-middle colunasInvisiveis">marshallandlilly@himym</td>
-                <td class="align-middle colunasInvisiveis">lillypads2</td>
-                <td class="align-middle">
-                    <div class="btn-group d-flex justify-content-center" role="group">
-                        <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalEditar"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                        <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluir"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                    </div>        
-                </td>
-            </tr>
             </tbody>
         </table>
     </div>
@@ -146,7 +122,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">Senha</label>
-                            <input type="password" class="form-control" id="inputPassword4" placeholder="Senha" required>
+                            <input name="senha" type="password" class="form-control" id="inputPassword4" placeholder="Senha" required>
                         </div>
                     </div>
                     <div class="custom-file">
@@ -164,7 +140,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalEditar<?= $usuario->id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -174,30 +150,31 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="/usuarios/update" method="POST">
                     <div class="form-group">
                         <label for="inputEmail4">Nome:</label>
-                        <input type="text" class="form-control" id="validationCustom01" placeholder="Nome" required>
+                        <input name="nome" type="text" class="form-control" id="validationCustom01" placeholder="Nome" required>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Email</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email" required> 
+                            <input name="email" type="email" class="form-control" id="inputEmail4" placeholder="Email" required> 
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">Senha</label>
-                            <input type="password" class="form-control" id="inputPassword4" placeholder="Senha" required>
+                            <input name="senha" type="password" class="form-control" id="inputPassword4" placeholder="Senha" required>
                         </div>
                     </div>
                     <div class="custom-file">
                             <input type="file" class="custom-file-input" id="customFile">
                             <label class="custom-file-label" for="customFile">Escolher foto</label>
                     </div>
-                </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn cor-botoes">Salvar Alterações</button>
+                    <input type="hidden" value="<?= $usuario->id ?>" name="id">
+                    <button type="submit" class="btn cor-botoes">Salvar Alterações</button>
+                </form>
             </div>
         </div>
     </div>

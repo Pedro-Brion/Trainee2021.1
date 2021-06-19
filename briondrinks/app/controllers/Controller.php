@@ -18,7 +18,8 @@ class UsuariosController
     {
         $parametros = [
             'nome' => $_POST['nome'],
-            'email'=> $_POST['email']
+            'email'=> $_POST['email'],
+            'senha'=> $_POST['senha']
         ];
 
         App::get('database')->insert('usuarios', $parametros);
@@ -29,6 +30,19 @@ class UsuariosController
     public function apagar()
     {
         App::get('database')->delete('usuarios', $_POST['id']);
+
+        header('Location: /usuarios');
+    }
+
+    public function update()
+    {
+        $parametros = [
+            'nome' => $_POST['nome'],
+            'email'=> $_POST['email'],
+            'senha'=> $_POST['senha']
+        ];
+
+        App::get('database')->update('usuarios', $parametros, $_POST['id']);
 
         header('Location: /usuarios');
     }

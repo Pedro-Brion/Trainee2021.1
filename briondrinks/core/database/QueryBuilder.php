@@ -26,7 +26,7 @@ class QueryBuilder
 
     public function insert ($table, $parametros)
     {
-        $sql = "INSERT INTO `{$table}` (`nome`,`email`) VALUES ('{$parametros['nome']}','{$parametros['email']}')";
+        $sql = "INSERT INTO `{$table}` (`nome`,`email`,`senha`) VALUES ('{$parametros['nome']}','{$parametros['email']}','{$parametros['senha']}')";
         //$sql = "INSERT INTO `{$table}` (`nome`, `email`) VALUES ('Barney Stinson', 'barneyincrivel@himym.com')";
 
         try {
@@ -43,6 +43,24 @@ class QueryBuilder
     public function delete ($table, $id)
     {
         $sql = "DELETE FROM `{$table}` WHERE id = {$id}";
+        
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+
+            $stmt->execute();
+            
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+
+    }
+
+    public function update ($table, $parametros, $id)
+    {
+        //$sql = "INSERT INTO `{$table}` (`nome`,`email`,`senha`) VALUES ('{$parametros['nome']}','{$parametros['email']}','{$parametros['senha']}')";
+        //$sql = "UPDATE `usuarios` SET `id`='[value-1]',`nome`='[value-2]',`email`='[value-3]',`senha`='[value-4]' WHERE 1";
+        $sql = "UPDATE `{$table}` SET `nome`='{$parametros['nome']}',`email`='{$parametros['email']}',`senha`='{$parametros['senha']}' WHERE id = {$id}";
         
 
         try {
