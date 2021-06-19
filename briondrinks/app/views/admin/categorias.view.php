@@ -56,7 +56,7 @@
             <tbody>
             <?php foreach ($categorias as $categoria) : ?>
             <tr>
-                <td class="align-middle larguraCategoria"><?= $categoria->categoria; ?></td>
+                <td class="align-middle larguraCategoria"><?= $categoria->categoria?></td>
                 <td>
                     <div class="btn-group d-flex justify-content-center" role="group">
                         <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalEditar<?= $categoria->id ?>"><i class="fa fa-pencil" aria-hidden="true"></i></button>

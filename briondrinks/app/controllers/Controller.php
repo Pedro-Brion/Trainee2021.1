@@ -98,7 +98,8 @@ class ProdutosController
     public function view()
     {
         $produtos = App::get('database')->selectAll('produtos');
-        return view('produtos',compact('produtos'));
+        $categorias = App::get('database')->selectAll('categorias');
+        return view('produtos',compact('produtos','categorias'));
     }
 
     public function create()

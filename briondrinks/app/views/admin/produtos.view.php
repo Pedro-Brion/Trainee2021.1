@@ -132,14 +132,11 @@
                     <div class="form-row">
                         <div class="form-group col-md-6"> 
                         <label for="campo3">Categoria:</label>
-                        <select class="custom-select" id="inputGroupSelect03" aria-label="Exemplo de select com botão addon">
-                            <option selected>Categorias:</option>
+                        <select name="categoria" class="custom-select" id="inputGroupSelect03" aria-label="Exemplo de select com botão addon">
                             <?php foreach ($categorias as $categoria) : ?>
-                            <option"> <?= $produto->nome ?></option>
+                            <option><?= $categoria->categoria ?></option>
                             <?php endforeach; ?>
                         </select>
-                        
-                            <input type="hidden" name="categoria" class="form-control" id="campo4" placeholder="Categoria" required> 
                         </div>
                         <div class="form-group col-md-6">
                             <label for="campo3">Preço:</label>
