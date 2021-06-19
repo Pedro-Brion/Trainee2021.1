@@ -19,7 +19,8 @@ class UsuariosController
         $parametros = [
             'nome' => $_POST['nome'],
             'email'=> $_POST['email'],
-            'senha'=> $_POST['senha']
+            'senha'=> $_POST['senha'],
+            'foto'=> $_POST['foto']
         ];
 
         App::get('database')->insert('usuarios', $parametros);
@@ -39,7 +40,8 @@ class UsuariosController
         $parametros = [
             'nome' => $_POST['nome'],
             'email'=> $_POST['email'],
-            'senha'=> $_POST['senha']
+            'senha'=> $_POST['senha'],
+            'foto'=> $_POST['foto']
         ];
 
         App::get('database')->update('usuarios', $parametros, $_POST['id']);

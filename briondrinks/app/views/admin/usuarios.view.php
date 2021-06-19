@@ -59,7 +59,7 @@
             <tbody>
             <?php foreach ($usuarios as $usuario) : ?>
             <tr>
-                <th scope="row"><img src="../../../public/img/barney.jpg" alt="Foto do Usuário" class="foto-tabela"></th>
+                <th scope="row"><img src="../../../public/img/<?= $usuario->foto; ?>" alt="Foto do Usuário" class="foto-tabela"></th>
                 <td class="align-middle"><?= $usuario->nome; ?></td>
                 <td class="align-middle colunasInvisiveis"><?= $usuario->email; ?></td>
                 <td class="align-middle colunasInvisiveis"><?= $usuario->senha; ?></td>
@@ -125,9 +125,9 @@
                             <input name="senha" type="password" class="form-control" id="inputPassword4" placeholder="Senha" required>
                         </div>
                     </div>
-                    <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="customFile">
-                            <label class="custom-file-label" for="customFile">Escolher foto</label>
+                    <div class="form-group">
+                        <label for="inputEmail4">Foto:</label>
+                        <input name="foto" type="text" class="form-control" id="validationCustom01" placeholder="Foto" required>
                     </div>
                 
             </div>
@@ -153,21 +153,21 @@
                 <form action="/usuarios/update" method="POST">
                     <div class="form-group">
                         <label for="inputEmail4">Nome:</label>
-                        <input name="nome" type="text" class="form-control" id="validationCustom01" placeholder="Nome" required>
+                        <input name="nome" type="text" class="form-control" id="validationCustom01" placeholder="Nome" value="<?= $usuario->nome ?>" required>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Email</label>
-                            <input name="email" type="email" class="form-control" id="inputEmail4" placeholder="Email" required> 
+                            <input name="email" type="email" class="form-control" id="inputEmail4" placeholder="Email" value="<?= $usuario->email ?>" required> 
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">Senha</label>
-                            <input name="senha" type="password" class="form-control" id="inputPassword4" placeholder="Senha" required>
+                            <input name="senha" type="password" class="form-control" id="inputPassword4" placeholder="Senha" value="<?= $usuario->senha ?>" required>
                         </div>
                     </div>
-                    <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="customFile">
-                            <label class="custom-file-label" for="customFile">Escolher foto</label>
+                    <div class="form-group">
+                        <label for="inputEmail4">Foto:</label>
+                        <input name="foto" type="text" class="form-control" id="validationCustom01" placeholder="Foto" value="<?= $usuario->foto ?>" required>
                     </div>
             </div>
             <div class="modal-footer">

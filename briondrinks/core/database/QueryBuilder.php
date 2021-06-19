@@ -26,7 +26,7 @@ class QueryBuilder
 
     public function insert ($table, $parametros)
     {
-        $sql = "INSERT INTO `{$table}` (`nome`,`email`,`senha`) VALUES ('{$parametros['nome']}','{$parametros['email']}','{$parametros['senha']}')";
+        $sql = "INSERT INTO `{$table}` (`nome`,`email`,`senha`,`foto`) VALUES ('{$parametros['nome']}','{$parametros['email']}','{$parametros['senha']}','{$parametros['foto']}')";
         //$sql = "INSERT INTO `{$table}` (`nome`, `email`) VALUES ('Barney Stinson', 'barneyincrivel@himym.com')";
 
         try {
@@ -60,7 +60,7 @@ class QueryBuilder
     {
         //$sql = "INSERT INTO `{$table}` (`nome`,`email`,`senha`) VALUES ('{$parametros['nome']}','{$parametros['email']}','{$parametros['senha']}')";
         //$sql = "UPDATE `usuarios` SET `id`='[value-1]',`nome`='[value-2]',`email`='[value-3]',`senha`='[value-4]' WHERE 1";
-        $sql = "UPDATE `{$table}` SET `nome`='{$parametros['nome']}',`email`='{$parametros['email']}',`senha`='{$parametros['senha']}' WHERE id = {$id}";
+        $sql = "UPDATE `{$table}` SET `nome`='{$parametros['nome']}',`email`='{$parametros['email']}',`senha`='{$parametros['senha']}',`foto`='{$parametros['foto']}' WHERE id = {$id}";
         
 
         try {
