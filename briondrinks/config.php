@@ -2,7 +2,7 @@
 
 return [
     'database' => [
-        'name' => 'brion-drinks',
+        'name' => 'brion_drinks',
         'username' => 'root',
         'password' => '',
         'connection' => 'mysql:host=127.0.0.1',
