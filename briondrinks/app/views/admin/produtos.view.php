@@ -80,8 +80,11 @@
     </div>
 </div>
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> cfe6d0acf88306d60496fea181b3daa988357b0e
 <div class="modal fade" id="modalEditar<?= $produto->id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -129,6 +132,10 @@
     </div>
 </div>
 <?php endforeach; ?>
+<<<<<<< HEAD
+=======
+
+>>>>>>> cfe6d0acf88306d60496fea181b3daa988357b0e
 <div class="modal fade" id="modalAdicionar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -181,7 +188,6 @@
         </div>
     </div>
 </div>
-
 
 <!-- SCRIPTS -->
 <?php require('scripts.php'); ?>

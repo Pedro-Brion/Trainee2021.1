@@ -46,50 +46,7 @@
 <!-- CONTEÚDO PRINCIPAL-->
     <div class="container shadow-lg mt-5 mb-5 p-5"> 
         <div class="row">
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card text-center shadow-p card-borda card-produto mt-3" >
-                    <img class="card-img-top" src="../../../public/img/drink5.png" alt="Imagem do drink">
-                    <div class="card-body">
-                        <h5 class="card-title">Drink Genérico</h5>
-                        <p class="card-text">R$ XX,XX</p>
-                        <p class="card-text">Categoria Genérica</p>
-                        <button type="button" class="btn card-botao">VER PRODUTO</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card text-center shadow-p card-borda card-produto mt-3" >
-                    <img class="card-img-top" src="../../../public/img/drink5.png" alt="Imagem do drink">
-                    <div class="card-body">
-                        <h5 class="card-title">Drink Genérico</h5>
-                        <p class="card-text">R$ XX,XX</p>
-                        <p class="card-text">Categoria Genérica</p>
-                        <button type="button" class="btn card-botao">VER PRODUTO</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card text-center shadow-p card-borda card-produto mt-3" >
-                    <img class="card-img-top" src="../../../public/img/drink5.png" alt="Imagem do drink">
-                    <div class="card-body">
-                        <h5 class="card-title">Drink Genérico</h5>
-                        <p class="card-text">R$ XX,XX</p>
-                        <p class="card-text">Categoria Genérica</p>
-                        <button type="button" class="btn card-botao">VER PRODUTO</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card text-center shadow-p card-borda card-produto mt-3" >
-                    <img class="card-img-top" src="../../../public/img/drink5.png" alt="Imagem do drink">
-                    <div class="card-body">
-                        <h5 class="card-title">Drink Genérico</h5>
-                        <p class="card-text">R$ XX,XX</p>
-                        <p class="card-text">Categoria Genérica</p>
-                        <button type="button" class="btn card-botao">VER PRODUTO</button>
-                    </div>
-                </div>
-            </div>
+        
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                 <div class="card text-center shadow-p card-borda card-produto mt-3" >
                     <img class="card-img-top" src="../../../public/img/drink5.png" alt="Imagem do drink">
@@ -101,7 +58,45 @@
                     </div>
                 </div>
             </div>
-            
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card text-center shadow-p card-borda card-produto mt-3" >
+                    <img class="card-img-top" src="../../../public/img/drink5.png" alt="Imagem do drink">
+                    <div class="card-body">
+                        <h5 class="card-title">Drink Genérico</h5>
+                        <p class="card-text">R$ XX,XX</p>
+                        <p class="card-text">Categoria Genérica</p>
+                        <a href="/produto" type="button" class="btn card-botao">VER PRODUTO</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card text-center shadow-p card-borda card-produto mt-3" >
+                    <img class="card-img-top" src="../../../public/img/drink5.png" alt="Imagem do drink">
+                    <div class="card-body">
+                        <h5 class="card-title">Drink Genérico</h5>
+                        <p class="card-text">R$ XX,XX</p>
+                        <p class="card-text">Categoria Genérica</p>
+                        <a href="/produto" type="button" class="btn card-botao">VER PRODUTO</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card text-center shadow-p card-borda card-produto mt-3" >
+                    <img class="card-img-top" src="../../../public/img/drink5.png" alt="Imagem do drink">
+                    <div class="card-body">
+                        <h5 class="card-title">Drink Genérico</h5>
+                        <p class="card-text">R$ XX,XX</p>
+                        <p class="card-text">Categoria Genérica</p>
+                        <a href="/produto" type="button" class="btn card-botao">VER PRODUTO</a>
+                    </div>
+                </div>
+            </div>
+    
+
+    
         </div>      
     </div>
 

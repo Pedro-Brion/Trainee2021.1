@@ -74,8 +74,11 @@
     </div>
 </div>
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> cfe6d0acf88306d60496fea181b3daa988357b0e
 <div class="modal fade" id="modalEditar<?= $usuario->id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -155,6 +158,10 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> cfe6d0acf88306d60496fea181b3daa988357b0e
 <!-- SCRIPTS -->
 <?php require('scripts.php'); ?>
 
