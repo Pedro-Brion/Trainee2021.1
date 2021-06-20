@@ -1,45 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../../public/css/css-adm.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="imagem/png" href="../../../public/img/logo.png" />
-    <link rel="stylesheet" href="../../../public/css/styles.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php require('headADM.php'); ?>
     <title>Lista de Produtos</title>
 </head>
 <body>
+
 <!-- NAVBAR -->
-    <div id="navbar" class="navbar cor-navbar">
-        <div class="logo-esq">
-            <img src="../../../public/img/5.png" alt="Logo da empresa Brion Drinks e Coquetelaria">
-        </div>
-        
-        <ul>
-            <li><a href="/usuarios">Usuários</a></li>
-            <li><a href="/produtos">Produtos</a></li>
-            <li><a href="/categorias">Categorias</a></li>
-            <li><a href="/login">Sair</a></li>
-            <li id="menu-icon" class="menu-icon" onclick="openNav()">&#x1F378; Menu</li>
-        </ul>
+<?php require('navbarADM.php'); ?>
 
-        <div class="logo-dir">
-            <img src="../../../public/img/5.png" alt="Logo da empresa Brion Drinks e Coquetelaria">
-        </div>
-    </div>
-
-
+<!-- TÍTULO DA PÁGINA -->
     <h2 class="titulo-pagina mt-5"><b>LISTA DE PRODUTOS</b></h2>
     <div class="linhaHorizontal mb-5"></div>
-
-<!-- PHP -->
 
 
 <!-- BOTÃO ADICIONAR -->
@@ -98,7 +70,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn" data-dismiss="modal">Cancelar</button>
-            <form action="/produtos/delete" method="POST">
+            <form action="/produtos-adm/delete" method="POST">
             <input type="hidden" name ="id" value="<?=$produto->id ?>">
                 <button type="submit" class="btn btn-danger">Excluir</button>
             </form>
@@ -117,7 +89,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form method="POST" action="/produtos">
+                <form method="POST" action="/produtos-adm">
                     <div class="form-group">
                    
                         <label for="campo1">Nome:</label>
@@ -172,7 +144,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="/produtos/update" method="POST">
+                <form action="/produtos-adm/update" method="POST">
                     <div class="form-group">
                         <label for="inputEmail4">Nome:</label>
                         <input name="nome" type="text" class="form-control" id="validationCustom01" placeholder="Nome" value="<?=$produto->nome ?>" required>
@@ -211,9 +183,7 @@
 <?php endforeach; ?>
 
 <!-- SCRIPTS -->
-    <script type="text/javascript" src="../js/scripts.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<?php require('scripts.php'); ?>
+
 </body>
 </html>  

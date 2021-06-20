@@ -1,41 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/css-home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="imagem/png" href="../img/logo.png" />
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php require('head.php'); ?>
+    <link rel="stylesheet" href="../../../public/css/css-home.css">
     <title>BrionDrinks - Home</title>
 </head>
 <body>
   
 <!-- NAVBAR -->
-<div id="navbar" class="navbar cor-navbar">
-  <div class="logo-esq">
-      <img src="../img/5.png" alt="Logo da empresa Brion Drinks e Coquetelaria">
-  </div>
-  
-  <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="view-produtos.html">Produtos</a></li>
-      <li><a href="quemsomos.html">Quem Somos</a></li>
-      <li><a href="contato.html">Contato</a></li>
-      <li><a href="contato.html">Login</a></li>
-      <li id="menu-icon" class="menu-icon" onclick="openNav()">&#x1F378; Menu</li>
-  </ul>
-
-  <div class="logo-dir">
-      <img src="../img/5.png" alt="Logo da empresa Brion Drinks e Coquetelaria">
-  </div>
-</div>
+<?php require('navbar.php'); ?>
 
 <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
@@ -46,7 +19,7 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-      <img src="../img/slide2.PNG" class="img-fluid">
+      <img src="../../../public/img/slide2.PNG" class="img-fluid">
     </svg>
 
       <div class="container">
@@ -56,7 +29,7 @@
     </div>
     <div class="carousel-item">
       <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-      <img src="../img/slide3.PNG" class="img-fluid">
+      <img src="../../../public/img/slide3.PNG" class="img-fluid">
     </svg>
       <div class="container">
         <div class="carousel-caption">
@@ -66,7 +39,7 @@
 
     <div class="carousel-item">
       <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-      <img src="../img/slide1.PNG" class="img-fluid">
+      <img src="../../../public/img/slide1.PNG" class="img-fluid">
     </svg>
       <div class="container">
         <div class="carousel-caption text-end">
@@ -96,7 +69,7 @@
       <div class="col-lg-3 col-mg-6 mb-4 mb-lg-0">
         <a href="#" class="destaque">
           <div class="img-container mb-3">
-            <img src="../img/margarita.PNG" class="img-fluid">
+            <img src="../../../public/img/margarita.PNG" class="img-fluid">
           </div>
           <h5>Margarita</h5>
           <p class="mb-0">Drink a base de tequila,licor de laranja e suco de limão.</p>
@@ -106,7 +79,7 @@
       <div class="col-lg-3 col-mg-6 mb-4 mb-lg-0">
         <a href="#" class="destaque">
           <div class="img-container mb-3">
-            <img src="../img/lagoa.PNG" class="img-fluid">
+            <img src="../../../public/img/lagoa.PNG" class="img-fluid">
           </div>
           <h5>Lagoa Azul</h5>
           <p class="mb-0">Drink feito com o licor Curaçau Blue, vodka e limonada e com baixo teor alcoólico.</p>
@@ -116,7 +89,7 @@
       <div class="col-lg-3 col-mg-6 mb-4 mb-lg-0">
         <a href="#" class="destaque">
           <div class="img-container mb-3">
-            <img src="../img/jack.PNG" class="img-fluid">
+            <img src="../../../public/img/jack.PNG" class="img-fluid">
           </div>
          <h5>Jack and Coke</h5>
          <p class="mb-0">Drink a base do whisky Jack and Daniel's combinado com Coca-Cola .</p>
@@ -126,7 +99,7 @@
       <div class="col-lg-3 col-mg-6 mb-4 mb-lg-0">
         <a href="#" class="destaque">
           <div class="img-container mb-3">
-            <img src="../img/highball.PNG" class="img-fluid">
+            <img src="../../../public/img/highball.PNG" class="img-fluid">
           </div>
           <h5>Highball</h5>
           <p class="mb-0">Drink a base de whisky e água tônica combinado com o doce da água de coco.</p>
@@ -160,35 +133,7 @@
 </div>
 
 <!-- FOOTER -->
-<div class="footer">
-  <div class="logo">
-      <img src="../img/logo.png" alt="Logo da empresa Brion Drinks e Coquetelaria">
-  </div>
+<?php require('footer.php'); ?>
 
-  <div class="informacoes">
-      <h1>Informações</h1>
-      <h2>Funcionamento: </h2>
-      <h2>Endereço: Juiz de Fora</h2>
-      <h2>Telefone: (32) 99999-9999</h2>
-  </div>
-
-  <div class="redes">
-      <h1>Redes Sociais</h1>
-      <a href="https://www.facebook.com" target="_blank"><img class="social-img" src="../img/facebook-logo.png" alt="Link para perfil no Facebook"></a>
-      <a href="https://www.instagram.com" target="_blank"><img class="social-img" src="../img/instagram-logo.png" alt="Link para perfil no Instagram"></a>
-      <a href="https://www.twitter.com" target="_blank"><img class="social-img" src="../img/twitter-logo.png" alt="Link para perfil no Twitter"></a>
-      <h2>@BrionDrinks</h2>
-  </div>
-</div>	
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../js/scripts.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-<!---//call to actions-->
 </body>
 </html>

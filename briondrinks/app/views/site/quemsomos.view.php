@@ -5,36 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/quem_somos.css">
+    <link rel="stylesheet" href="../../../public/css/quem_somos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="imagem/png" href="../img/logo.png" />
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="imagem/png" href="../../../public/img/logo.png" />
+    <link rel="stylesheet" href="../../../public/css/styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quem Somos</title>
 </head>
 <body>
 <!-- NAVBAR -->
-    <div id="navbar" class="navbar cor-navbar">
-        <div class="logo-esq">
-            <img src="../img/5.png" alt="Logo da empresa Brion Drinks e Coquetelaria">
-        </div>
-        
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="view-produtos.html">Produtos</a></li>
-            <li><a href="quemsomos.html">Quem Somos</a></li>
-            <li><a href="contato.html">Contato</a></li>
-            <li><a href="contato.html">Sair</a></li>
-            <li id="menu-icon" class="menu-icon" onclick="openNav()">&#x1F378; Menu</li>
-        </ul>
-
-        <div class="logo-dir">
-            <img src="../img/5.png" alt="Logo da empresa Brion Drinks e Coquetelaria">
-        </div>
-    </div>
+<?php require('navbar.php'); ?>
 
 <!-- TÍTULO DA PÁGINA -->
     <h2 class="titulo-pagina mt-5"><b>QUEM SOMOS</b></h2>
@@ -42,7 +25,7 @@
 
 <!-- CONTEÚDO PRINCIPAL -->
     <div class="container mb-5">
-        <img src="../img/loja.jpg" alt="Imagem da Loja" class="imgQuemSomos">
+        <img src="../../../public/img/loja.jpg" alt="Imagem da Loja" class="imgQuemSomos">
         <p class="textoQuemSomos mt-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit tellus in mauris finibus fringilla. 
           Praesent non dui sit amet nulla iaculis auctor. Fusce viverra aliquam ante, quis congue eros sagittis vel. 
           Aliquam erat volutpat. Mauris convallis nisi ut augue tristique varius. Proin porttitor dui at enim convallis posuere. 
@@ -87,26 +70,7 @@
     </div>
 
 <!-- FOOTER -->
-    <footer class="footer">
-        <div class="logo">
-            <img src="../img/logo.png" alt="Logo da empresa Brion Drinks e Coquetelaria">
-        </div>
-
-        <div class="informacoes">
-            <h1>Informações</h1>
-            <h2>Funcionamento: </h2>
-            <h2>Endereço: Juiz de Fora</h2>
-            <h2>Telefone: (32) 99999-9999</h2>
-        </div>
-
-        <div class="redes">
-            <h1>Redes Sociais</h1>
-            <a href="https://www.facebook.com" target="_blank"><img class="social-img" src="../img/facebook-logo.png" alt="Link para perfil no Facebook"></a>
-            <a href="https://www.instagram.com" target="_blank"><img class="social-img" src="../img/instagram-logo.png" alt="Link para perfil no Instagram"></a>
-            <a href="https://www.twitter.com" target="_blank"><img class="social-img" src="../img/twitter-logo.png" alt="Link para perfil no Twitter"></a>
-            <h2>@BrionDrinks</h2>
-        </div>
-      </footer>	
+<?php require('footer.php'); ?>
 
 <!-- SCRIPTS -->
     <script type="text/javascript" src="../js/scripts.js"></script>

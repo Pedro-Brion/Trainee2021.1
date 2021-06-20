@@ -11,7 +11,7 @@ class UsuariosController
     {
         $usuarios = App::get('database')->selectAll('usuarios');
 
-        return view('usuarios',compact('usuarios'));
+        return viewADM('usuarios',compact('usuarios'));
     }
 
     public function adicionar()
@@ -58,7 +58,7 @@ class CategoriasController
     {
         $categorias = App::get('database')->selectAll('categorias');
 
-        return view('categorias',compact('categorias'));
+        return viewADM('categorias',compact('categorias'));
     }
 
     public function adicionar()
@@ -99,7 +99,7 @@ class ProdutosController
     {
         $produtos = App::get('database')->selectAll('produtos');
         $categorias = App::get('database')->selectAll('categorias');
-        return view('produtos',compact('produtos','categorias'));
+        return viewADM('produtos',compact('produtos','categorias'));
     }
 
     public function create()
@@ -136,6 +136,21 @@ class ProdutosController
 
         header('Location: /produtos');
     }
+}
+
+class PagesController
+{
+
+    public function viewHome()
+    {
+        return view('home');
+    }
+
+    public function viewQuemSomos()
+    {
+        return view('quemsomos');
+    }
+
 }
 
 
