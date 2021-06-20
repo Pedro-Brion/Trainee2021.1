@@ -108,19 +108,20 @@ class ProdutosADMController
             'nome' => $_POST['nome'],
             'descricao' => $_POST['descricao'],
             'categoria' => $_POST['categoria'],
-            'preco'=> $_POST['preco']
+            'preco'=> $_POST['preco'],
+            'foto'=> $_POST['foto']
         ];
 
         App::get('database')->insertProdutos('produtos', $parametros);
 
-        header('Location: /produtos');
+        header('Location: /produtos-adm');
     }
 
     public function delete()
     {
         App::get('database')->delete('produtos', $_POST['id']);
 
-        header('Location: /produtos');
+        header('Location: /produtos-adm');
     }
 
     public function update()
@@ -129,12 +130,13 @@ class ProdutosADMController
             'nome' => $_POST['nome'],
             'descricao'=> $_POST['descricao'],
             'categoria'=> $_POST['categoria'],
-            'preco'=> $_POST['preco']
+            'preco'=> $_POST['preco'],
+            'foto'=> $_POST['foto']
         ];
 
         App::get('database')->updateProdutos('produtos', $parametros, $_POST['id']);
 
-        header('Location: /produtos');
+        header('Location: /produtos-adm');
     }
 }
 

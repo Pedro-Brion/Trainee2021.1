@@ -13,7 +13,6 @@
     <h2 class="titulo-pagina mt-5"><b>LISTA DE PRODUTOS</b></h2>
     <div class="linhaHorizontal mb-5"></div>
 
-
 <!-- BOTÃO ADICIONAR -->
 <div class="container botao-adicionar mb-3" data-toggle="modal" data-target="#modalAdicionar">
     <button type="button" class="btn cor-botoes">Adicionar</button>
@@ -36,7 +35,7 @@
             <?php foreach ($produtos as $produto) : ?>
             <tr>
                 
-                <th scope="row"><img src="../../../public/img/batida.png" alt="Foto do Usuário" class="foto-tabela"></th>
+                <th scope="row"><img src="../../../public/img/<?= $produto->foto ?>" alt="Foto do Usuário" class="foto-tabela"></th>
                 <td class="align-middle"><?= $produto->nome ?></td>
                 <td class="align-middle colunasInvisiveis"><?= $produto->descricao ?></td>
                 <td class="align-middle colunasInvisiveis"><?= $produto->preco ?></td>
@@ -116,10 +115,9 @@
                         </div>
                         
                     </div>
-                    
-                    <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="customFile">
-                            <label class="custom-file-label" for="customFile">Escolher foto</label>
+                    <div class="form-group">
+                        <label for="inputEmail4">Foto:</label>
+                        <input name="foto" type="text" class="form-control" id="validationCustom01" placeholder="Foto" required>
                     </div>
                 
             </div>
@@ -165,9 +163,9 @@
                         </div>
                         
                     </div>
-                    <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="customFile">
-                            <label class="custom-file-label" for="customFile">Escolher foto</label>
+                    <div class="form-group">
+                        <label for="inputEmail4">Foto:</label>
+                        <input name="foto" type="text" class="form-control" id="validationCustom01" placeholder="Foto" value="<?= $produto->foto ?>" required>
                     </div>
                
             </div>

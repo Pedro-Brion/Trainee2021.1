@@ -106,7 +106,7 @@ class QueryBuilder
 
     public function insertProdutos ($table, $parametros)
     {
-        $sql = "INSERT INTO {$table} (nome,descricao,categoria,preco) VALUES ('{$parametros['nome']}','{$parametros['descricao']}','{$parametros['categoria']}','{$parametros['preco']}')";
+        $sql = "INSERT INTO {$table} (nome,descricao,categoria,preco,foto) VALUES ('{$parametros['nome']}','{$parametros['descricao']}','{$parametros['categoria']}','{$parametros['preco']}','{$parametros['foto']}')";
 
         try {
             $stmt = $this->pdo->prepare($sql);
@@ -121,7 +121,7 @@ class QueryBuilder
 
     public function updateProdutos ($table, $parametros, $id)
     {
-        $sql = "UPDATE {$table} SET nome='{$parametros['nome']}',descricao='{$parametros['descricao']}',categoria='{$parametros['categoria']}', preco='{$parametros['preco']}' WHERE id = {$id}";
+        $sql = "UPDATE {$table} SET nome='{$parametros['nome']}',descricao='{$parametros['descricao']}',categoria='{$parametros['categoria']}', preco='{$parametros['preco']}', foto='{$parametros['foto']}' WHERE id = {$id}";
 
 
         try {
