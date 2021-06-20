@@ -18,6 +18,8 @@
     <button type="button" class="btn cor-botoes">Adicionar</button>
 </div>
 
+
+
 <!-- CONTEÚDO PRINCIPAL -->
     <div class="container table-responsive mb-5 conteudo-principal">
         <table class="table table-bordered table-hover shadow">
@@ -78,6 +80,55 @@
     </div>
 </div>
 
+
+
+<div class="modal fade" id="modalEditar<?= $produto->id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><strong>Editar Produto</strong></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/produtos-adm/update" method="POST">
+                    <div class="form-group">
+                        <label for="inputEmail4">Nome:</label>
+                        <input name="nome" type="text" class="form-control" id="validationCustom01" placeholder="Nome" value="<?=$produto->nome ?>" required>
+                    </div>
+                    <div class="form-group">
+                            <label for="campo1">Descrição:</label>
+                            <input type="text" name="descricao" class="form-control" id="campo2" placeholder="Descrição" value="<?=$produto->descricao ?>" required>
+                        </div>
+                        <div class="form-row">
+                        <div class="form-group col-md-6"> 
+                            <label for="campo4">Categoria:</label> 
+                            <input type="text" name="categoria" class="form-control" id="campo4" placeholder="Categoria" value="<?=$produto->categoria ?>" required> 
+                        </div>
+                   
+                    <div class="form-group col-md-6">
+                            <label for="campo3">Preço:</label>
+                            <input name="preco" type="text" class="form-control" id="campo3" placeholder="Preço" value="<?=$produto->preco ?>" required>
+                        </div>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail4">Foto:</label>
+                        <input name="foto" type="text" class="form-control" id="validationCustom01" placeholder="Foto" value="<?= $produto->foto ?>" required>
+                    </div>
+               
+            </div>
+                <div class="modal-footer">
+                <button type="button" class="btn" data-dismiss="modal">Cancelar</button>
+                    <input type="hidden" value="<?= $produto->id ?>" name="id">
+                    <button type="submit" class="btn cor-botoes">Salvar Alterações</button>    
+                </div>
+                </form>
+        </div>
+    </div>
+</div>
+<?php endforeach; ?>
 <div class="modal fade" id="modalAdicionar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -131,54 +182,6 @@
     </div>
 </div>
 
-
-<div class="modal fade" id="modalEditar<?= $produto->id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"><strong>Editar Produto</strong></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="/produtos-adm/update" method="POST">
-                    <div class="form-group">
-                        <label for="inputEmail4">Nome:</label>
-                        <input name="nome" type="text" class="form-control" id="validationCustom01" placeholder="Nome" value="<?=$produto->nome ?>" required>
-                    </div>
-                    <div class="form-group">
-                            <label for="campo1">Descrição:</label>
-                            <input type="text" name="descricao" class="form-control" id="campo2" placeholder="Descrição" value="<?=$produto->descricao ?>" required>
-                        </div>
-                        <div class="form-row">
-                        <div class="form-group col-md-6"> 
-                            <label for="campo4">Categoria:</label> 
-                            <input type="text" name="categoria" class="form-control" id="campo4" placeholder="Categoria" value="<?=$produto->categoria ?>" required> 
-                        </div>
-                   
-                    <div class="form-group col-md-6">
-                            <label for="campo3">Preço:</label>
-                            <input name="preco" type="text" class="form-control" id="campo3" placeholder="Preço" value="<?=$produto->preco ?>" required>
-                        </div>
-                        
-                    </div>
-                    <div class="form-group">
-                        <label for="inputEmail4">Foto:</label>
-                        <input name="foto" type="text" class="form-control" id="validationCustom01" placeholder="Foto" value="<?= $produto->foto ?>" required>
-                    </div>
-               
-            </div>
-                <div class="modal-footer">
-                <button type="button" class="btn" data-dismiss="modal">Cancelar</button>
-                    <input type="hidden" value="<?= $produto->id ?>" name="id">
-                    <button type="submit" class="btn cor-botoes">Salvar Alterações</button>    
-                </div>
-                </form>
-        </div>
-    </div>
-</div>
-<?php endforeach; ?>
 
 <!-- SCRIPTS -->
 <?php require('scripts.php'); ?>
