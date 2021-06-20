@@ -92,7 +92,7 @@ class CategoriasController
 
 }
 
-class ProdutosController
+class ProdutosADMController
 {
 
     public function view()
@@ -149,6 +149,46 @@ class PagesController
     public function viewQuemSomos()
     {
         return view('quemsomos');
+    }
+
+}
+
+class LoginController
+{
+
+    public function view()
+    {
+        return view('login');
+    }
+
+}
+
+class ContatoController
+{
+
+    public function view()
+    {
+        return view('contato');
+    }
+
+}
+
+class ProdutosController
+{
+
+    public function view()
+    {
+        return view('produtos');
+    }
+
+}
+
+class ProdutoController
+{
+
+    public function view()
+    {
+        return view('produto');
     }
 
 }

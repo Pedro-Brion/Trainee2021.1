@@ -12,14 +12,26 @@ $router->post('categorias','CategoriasController@adicionar');
 $router->post('categorias/delete','CategoriasController@apagar');
 $router->post('categorias/update','CategoriasController@update');
 
-//Produtos Controller
-$router->get('produtos-adm','ProdutosController@view');
-$router->post('produtos-adm','ProdutosController@create');
-$router->post('produtos-adm/delete','ProdutosController@delete');
-$router->post('produtos-adm/update','ProdutosController@update');
+//ProdutosADM Controller
+$router->get('produtos-adm','ProdutosADMController@view');
+$router->post('produtos-adm','ProdutosADMController@create');
+$router->post('produtos-adm/delete','ProdutosADMController@delete');
+$router->post('produtos-adm/update','ProdutosADMController@update');
 
 //Pages Controller
-$router->get('','PagesController@viewHome');
+$router->get('home','PagesController@viewHome');
 $router->get('quemsomos','PagesController@viewQuemSomos');
+
+//Login Controller
+$router->get('login','LoginController@view');
+
+//Contato Controller
+$router->get('contato','ContatoController@view');
+
+//Produtos Controller
+$router->get('produtos','ProdutosController@view');
+
+//Produto Controller
+$router->get('produto','ProdutoController@view');
 
 ?>

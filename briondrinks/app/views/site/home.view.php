@@ -10,6 +10,8 @@
 <!-- NAVBAR -->
 <?php require('navbar.php'); ?>
 
+<!-- CARROSSEL -->
+
 <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -59,7 +61,7 @@
 </div>
 
 
-<!-- ultimos adicionados -->
+<!-- ÚLTIMOS ADICIONADOS -->
 <div id="adicionados" class="block">
   <div class="container">
     <h2 class="titulo-pagina mt-5"><b>ÚLTIMOS ADICIONADOS</b></h2>
@@ -109,9 +111,8 @@
     </div>
   </div>
 </div>
-<!-- //ultimos adicionados -->
 
-<!---call to actions-->
+<!--- call to actions-->
 <div id="call">
   <div class="container mt-5">
   <nav class="navbar navbar-expand-lg navbar-light">
