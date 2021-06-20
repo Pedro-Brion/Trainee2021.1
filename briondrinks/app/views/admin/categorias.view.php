@@ -68,31 +68,6 @@
     </div>
   </div>
 
-  <div class="modal fade" id="modalAdicionar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"><strong>Adicionar Categoria</strong></h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form method="POST" action="/categorias">
-              <div class="form-group">
-                <label for="inputEmail4">Nome:</label>
-                <input name="categoria" type="text" class="form-control" id="inputEmail4" placeholder="Categoria" required>
-              </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn" data-dismiss="modal">Cancelar</button>
-          <button type="submit" class="btn cor-botoes">Adicionar</button>
-        </div>
-          </form>
-      </div>
-    </div>
-  </div>
-
   <div class="modal fade" id="modalEditar<?= $categoria->id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -119,6 +94,31 @@
     </div>
   </div>
 <?php endforeach; ?>
+
+<div class="modal fade" id="modalAdicionar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><strong>Adicionar Categoria</strong></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form method="POST" action="/categorias">
+              <div class="form-group">
+                <label for="inputEmail4">Nome:</label>
+                <input name="categoria" type="text" class="form-control" id="inputEmail4" placeholder="Categoria" required>
+              </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn" data-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn cor-botoes">Adicionar</button>
+        </div>
+          </form>
+      </div>
+    </div>
+  </div>
 
 <!-- SCRIPTS -->
 <?php require('scripts.php'); ?>
