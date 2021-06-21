@@ -180,7 +180,8 @@ class ProdutosController
 
     public function view()
     {
-        return view('produtos');
+        $produtos = App::get('database')->selectAll('produtos');
+        return view('produtos',compact('produtos'));
     }
 
 }

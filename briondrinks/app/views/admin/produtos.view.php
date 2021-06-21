@@ -102,7 +102,11 @@
                         <div class="form-row">
                         <div class="form-group col-md-6"> 
                             <label for="campo4">Categoria:</label> 
-                            <input type="text" name="categoria" class="form-control" id="campo4" placeholder="Categoria" value="<?=$produto->categoria ?>" required> 
+                            <select name="categoria" class="custom-select" id="inputGroupSelect03" aria-label="Exemplo de select com botão addon">
+                                <?php foreach ($categorias as $categoria) : ?>
+                                <option><?= $categoria->categoria ?></option>
+                                <?php endforeach; ?>
+                            </select>
                         </div>
                    
                     <div class="form-group col-md-6">
