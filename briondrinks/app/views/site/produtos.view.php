@@ -54,7 +54,8 @@
                         <h5 class="card-title"><?= $produto->nome ?></h5>
                         <p class="card-text"><?= $produto->preco ?></p>
                         <p class="card-text"><?= $produto->categoria ?></p>
-                        <a href="/produto" type="button" class="btn card-botao">VER PRODUTO</a>
+                        <a href="/produto" type="button" class="btn card-botao">VER PRODUTO<?=$produto->id?></a>
+                   
                     </div>
                 </div>
             </div>
@@ -64,7 +65,6 @@
     
         </div>      
     </div>
-
 <!-- PAGINAÇÃO -->
     <nav aria-label="Navegação da página de produtos" class="filtro-pesquisa mb-5">
         <ul class="pagination justify-content-center">
