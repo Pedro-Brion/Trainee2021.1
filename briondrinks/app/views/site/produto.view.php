@@ -29,8 +29,6 @@
                     <h3 class="text-left w-100 titulos-descricao">DESCRIÇÃO:<span class="texto-descricao"> <?= $produto->descricao ?></span></h3>
                     <h3 class="text-left w-100 titulos-descricao">CATEGORIA:<span class="texto-descricao"> <?= $produto->categoria ?></span></h3>
                     <h3 class="text-left w-100 titulos-descricao">PREÇO:<span class="texto-descricao"><?= $produto->preco ?></span></h3>
-                    <form action="/produto" method="POST">
-            <input type="hidden" name ="id" value="<?=$produto->id ?>">
                 </div>
             </div>
     </div>

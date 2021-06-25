@@ -191,7 +191,7 @@ class ProdutoController
 
     public function view()
     { 
-        $produtos = App::get('database')->selectAll('produtos');
+        $produtos = App::get('database')->selectById('produtos',$_POST['id']);
         return view('produto',compact('produtos'));
     
     }

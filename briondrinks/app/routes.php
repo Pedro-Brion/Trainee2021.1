@@ -32,6 +32,6 @@ $router->get('contato','ContatoController@view');
 $router->get('produtos','ProdutosController@view');
 
 //Produto Controller
-$router->get('produto','ProdutoController@view');
+$router->post('produto','ProdutoController@view');
 
 ?>

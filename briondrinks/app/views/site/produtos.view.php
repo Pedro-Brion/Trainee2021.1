@@ -54,7 +54,10 @@
                         <h5 class="card-title"><?= $produto->nome ?></h5>
                         <p class="card-text"><?= $produto->preco ?></p>
                         <p class="card-text"><?= $produto->categoria ?></p>
-                        <a href="/produto" type="button" class="btn card-botao">VER PRODUTO<?=$produto->id?></a>
+                        <form action="/produto" method="POST">
+                            <input type="hidden" name ="id" value="<?=$produto->id ?>">
+                            <button type="submit" class="btn card-botao">VER PRODUTO</button>
+                        </form>
                    
                     </div>
                 </div>

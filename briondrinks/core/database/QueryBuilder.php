@@ -24,6 +24,15 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
+    public function selectById($table, $id)
+    {
+        $statement = $this->pdo->prepare("select * from {$table} WHERE id = {$id}");
+
+        $statement->execute();
+
+        return $statement->fetch(PDO::FETCH_LAZY);
+    }
+
     public function insertUsuarios ($table, $parametros)
     {
         $sql = "INSERT INTO `{$table}` (`nome`,`email`,`senha`,`foto`) VALUES ('{$parametros['nome']}','{$parametros['email']}','{$parametros['senha']}','{$parametros['foto']}')";
