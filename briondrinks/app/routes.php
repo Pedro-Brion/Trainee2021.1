@@ -34,8 +34,7 @@ $router->get('contato','ContatoController@view');
 $router->get('produtos','ProdutosController@view');
 
 //Results Controller
-$router->get('results','ResultsController@busca');
-$router->post('results','ResultsController@filtro');
+$router->get('produtos','ResultsController@busca');
 
 //Produto Controller
 $router->get('produto','ProdutoController@view');

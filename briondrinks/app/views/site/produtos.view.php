@@ -24,7 +24,7 @@
                 <div class="btn-group">
 
                     <button class="btn btn dropdown-toggle shadow-lg cor-botoes" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CATEGORIAS</button>
-                    <form action="/results" method="GET">
+                    <form action="/produtos" method="GET">
                     <div class="dropdown-menu">
                     <?php foreach ($categorias as $categoria) : ?>
                         <li> <span> &#8287; </span> 

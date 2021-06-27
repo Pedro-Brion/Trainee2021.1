@@ -217,9 +217,6 @@ class ProdutosController
 
     public function view()
     {
-        $sql = 'SELECT * FROM produtos order by id desc ';
-
-
         $produtosPorPagina = "8";
         $pagina = $_GET['pagina'] ?? 1;
         $inicio = $pagina - 1;
@@ -228,9 +225,11 @@ class ProdutosController
 
         $produtos = App::get('database')->selectAll('produtos');
         $totalProdutos = count($produtos); 
+        $produtos2 = App::get('database')->selectAll2('produtos');
         $totalPaginas = $totalProdutos / $produtosPorPagina;
-        $sql = $sql . $limite;
-        $produtos = App::get('database')->selectAllPaginacao($sql);
+
+        $produtos = App::get('database')->selectAllPaginacao($limite,$produtos2);
+        $categorias = App::get('database')->selectAll('categorias');
 
         $paginacao = new \stdClass();
         $paginacao->pagina = $pagina;
@@ -239,7 +238,6 @@ class ProdutosController
         $paginacao->produtosPorPagina = $produtosPorPagina;
         $paginacao->inicio = $inicio;
 
-        $categorias = App::get('database')->selectAll('categorias');
         return view('produtos',compact('produtos','categorias','paginacao'));
     }
 
@@ -250,24 +248,60 @@ class ResultsController
 
     public function busca()
     {
-        
+        $produtosPorPagina = "8";
+        $pagina = $_GET['pagina'] ?? 1;
+        $inicio = $pagina - 1;
+        $inicio = $inicio * $produtosPorPagina;
+        $limite = 'LIMIT ' . $inicio . ',' . $produtosPorPagina;
+
         //Filtro e Busca vazios
         if (empty($_GET['buscar']) && empty($_GET['categoria']))
         {
+            
+
+            
             $produtos = App::get('database')->selectAll('produtos');
+            $totalProdutos = count($produtos);
+            $produtos2 = App::get('database')->selectAll2('produtos');
+            $totalPaginas = $totalProdutos / $produtosPorPagina;
+
+            $produtos = App::get('database')->selectAllPaginacao($limite,$produtos2);
             $categorias = App::get('database')->selectAll('categorias');
 
-            return view('produtos',compact('produtos','categorias'));    
+            $paginacao = new \stdClass();
+            $paginacao->pagina = $pagina;
+            $paginacao->totalPaginas = $totalPaginas;
+            $paginacao->totalProdutos = $totalProdutos;
+            $paginacao->produtosPorPagina = $produtosPorPagina;
+            $paginacao->inicio = $inicio;
+
+        return view('produtos',compact('produtos','categorias','paginacao'));    
         }
         //Filtro vazio
         else if (!empty($_GET['buscar']) && empty($_GET['categoria']))
         {
+
             $buscar = $_GET['buscar'];
 
             $produtos = App::get('database')->buscar('produtos', $buscar);
+            $totalProdutos = count($produtos);
+            $produtos2 = App::get('database')->buscar2('produtos', $buscar);
+
+
+            $totalPaginas = $totalProdutos / $produtosPorPagina;
+
+            $produtos = App::get('database')->selectAllPaginacao($limite,$produtos2);
+
+            $paginacao = new \stdClass();
+            $paginacao->pagina = $pagina;
+            $paginacao->totalPaginas = $totalPaginas;
+            $paginacao->totalProdutos = $totalProdutos;
+            $paginacao->produtosPorPagina = $produtosPorPagina;
+            $paginacao->inicio = $inicio;
+
             $categorias = App::get('database')->selectAll('categorias');
 
-            return view('produtos',compact('produtos','categorias'));
+            return view('produtos',compact('produtos','categorias','paginacao'));
         }
         //Busca vazia
         else if (empty($_GET['buscar']) && !empty($_GET['categoria']))
@@ -277,9 +311,22 @@ class ResultsController
             $filtro[] = $_GET['categoria'];
 
             $produtos = App::get('database')->filtrar('produtos', $filtro[0]);
+            $totalProdutos = count($produtos); 
+            $produtos2 = App::get('database')->filtrar2('produtos', $filtro[0]);
+            $totalPaginas = $totalProdutos / $produtosPorPagina;
+
+            $produtos = App::get('database')->selectAllPaginacao($limite,$produtos2);
+
+            $paginacao = new \stdClass();
+            $paginacao->pagina = $pagina;
+            $paginacao->totalPaginas = $totalPaginas;
+            $paginacao->totalProdutos = $totalProdutos;
+            $paginacao->produtosPorPagina = $produtosPorPagina;
+            $paginacao->inicio = $inicio;
+
             $categorias = App::get('database')->selectAll('categorias');
 
-            return view('produtos',compact('produtos','categorias'));
+            return view('produtos',compact('produtos','categorias','paginacao'));
         }
         //Nada vazio
         else 
@@ -291,33 +338,27 @@ class ResultsController
             $buscar = $_GET['buscar'];
 
             $produtos = App::get('database')->buscarFiltrar('produtos', $buscar, $filtro[0]);
+            $totalProdutos = count($produtos); 
+            $produtos2 = App::get('database')->buscarFiltrar2('produtos', $buscar, $filtro[0]);
+            $totalPaginas = $totalProdutos / $produtosPorPagina;
+
+            $produtos = App::get('database')->selectAllPaginacao($limite,$produtos2);
+
+            $paginacao = new \stdClass();
+            $paginacao->pagina = $pagina;
+            $paginacao->totalPaginas = $totalPaginas;
+            $paginacao->totalProdutos = $totalProdutos;
+            $paginacao->produtosPorPagina = $produtosPorPagina;
+            $paginacao->inicio = $inicio;
+
             $categorias = App::get('database')->selectAll('categorias');
 
-            return view('produtos',compact('produtos','categorias'));
+            return view('produtos',compact('produtos','categorias','paginacao'));
         }
         
         
         
-        //var_dump($_GET['buscar']);
-
-        //$buscar = $_GET['buscar'];
-
         
-
-        //$produtos = App::get('database')->buscar('produtos', $buscar);
-        //$categorias = App::get('database')->selectAll('categorias');
-        //return view('produtos',compact('produtos','categorias'));
-    }
-
-    public function filtro()
-    {
-        $filtro = array();
-
-        $filtro[] = $_POST['categoria'];
-
-        $produtos = App::get('database')->filtrar('produtos', $filtro[0]);
-        $categorias = App::get('database')->selectAll('categorias');
-        return view('produtos',compact('produtos','categorias'));
     }
 
 }
