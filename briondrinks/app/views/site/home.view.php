@@ -3,6 +3,7 @@
 <head>
     <?php require('head.php'); ?>
     <link rel="stylesheet" href="../../../public/css/css-home.css">
+    <link rel="stylesheet" href="../../../public/css/styles.css">
     <title>BrionDrinks - Home</title>
 </head>
 <body>
@@ -122,10 +123,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Quem somos</a>
+          <a class="nav-link active" aria-current="page" href="\quemsomos">Quem somos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contato</a>
+          <a class="nav-link" href="\contato">Contato</a>
         </li>
       </ul>
     </div>

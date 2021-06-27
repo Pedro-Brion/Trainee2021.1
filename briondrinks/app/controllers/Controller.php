@@ -145,7 +145,9 @@ class PagesController
 
     public function viewHome()
     {
-        return view('home');
+        $produtos = App::get('database')->selectAll('produtos');
+
+        return view('home',compact('produtos'));
     }
 
     public function viewQuemSomos()
@@ -246,7 +248,7 @@ class ProdutosController
 class ResultsController
 {
 
-    public function busca()
+    public function buscaFiltro()
     {
         $produtosPorPagina = "8";
         $pagina = $_GET['pagina'] ?? 1;
@@ -368,10 +370,6 @@ class ProdutoController
 
     public function view()
     { 
-        
-        //$id = $_GET['id'];
-            //$produto = App::get('database')->selectById('produtos',$id);
-            //return view('produto', compact('produto'));
         
         $produtos = App::get('database')->selectById('produtos',$_GET['id']);
         return view('produto',compact('produtos'));

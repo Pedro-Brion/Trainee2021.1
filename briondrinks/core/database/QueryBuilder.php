@@ -60,7 +60,6 @@ class QueryBuilder
     public function insertUsuarios ($table, $parametros)
     {
         $sql = "INSERT INTO `{$table}` (`nome`,`email`,`senha`,`foto`) VALUES ('{$parametros['nome']}','{$parametros['email']}','{$parametros['senha']}','{$parametros['foto']}')";
-        //$sql = "INSERT INTO `{$table}` (`nome`, `email`) VALUES ('Barney Stinson', 'barneyincrivel@himym.com')";
 
         try {
             $stmt = $this->pdo->prepare($sql);
@@ -180,14 +179,6 @@ class QueryBuilder
 
     public function buscar2 ($table, $buscar)
     {
-        
-        //$sql = 
-
-        //$stmt = $this->pdo->prepare($sql);
-
-        //$stmt->execute();
-
-        //return $stmt->fetchAll(PDO::FETCH_CLASS);
         return "SELECT * FROM {$table} WHERE nome LIKE '%".$buscar."%'";
     }
 
@@ -222,10 +213,6 @@ class QueryBuilder
             $sql .= " LIKE '$categoria' ";
             $sql .= "OR categoria";
         }
-
-        //$stmt = $this->pdo->prepare($sql);
-
-        //$stmt->execute();
 
         return $sql;
 
@@ -270,10 +257,6 @@ class QueryBuilder
         } 
 
         $sql .= " )";
-        
-        //$stmt = $this->pdo->prepare($sql);
-
-        //$stmt->execute();
 
         return $sql;
 
