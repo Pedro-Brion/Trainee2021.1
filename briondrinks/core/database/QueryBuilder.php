@@ -24,13 +24,22 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
+    public function selectAllPaginacao($sql)
+    {
+        $statement = $this->pdo->prepare("{$sql}");
+
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    }
+
     public function selectById($table, $id)
     {
         $statement = $this->pdo->prepare("select * from {$table} WHERE id = {$id}");
 
         $statement->execute();
 
-        return $statement->fetch(PDO::FETCH_LAZY);
+        return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
     public function insertUsuarios ($table, $parametros)
@@ -143,6 +152,79 @@ class QueryBuilder
         }
 
     }
+
+    public function buscar ($table, $buscar)
+    {
+        
+        $sql = "SELECT * FROM {$table} WHERE nome LIKE '%".$buscar."%'";
+
+        $stmt = $this->pdo->prepare($sql);
+
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
+
+    }
+
+    public function filtrar ($table, $filtro)
+    {
+        
+        $sql = "SELECT * FROM {$table} WHERE categoria";
+        //LIKE '%".$categoria."%' OR categoria LIKE '%".$categoria."%'";
+        $contador = 0;
+
+        foreach ($filtro as $contador => $categoria)
+        {
+            $sql .= " LIKE '$categoria' ";
+            $sql .= "OR categoria";
+        }
+
+        $stmt = $this->pdo->prepare($sql);
+
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
+
+    }
+
+    public function buscarFiltrar ($table, $buscar, $filtro)
+    {
+        $sql = "SELECT * FROM {$table} WHERE nome LIKE '%".$buscar."%'";
+        
+        $sql .= " AND ( categoria ";
+
+        $contador = 0;
+        
+        foreach ($filtro as $contador => $categoria)
+        {
+            $sql .= " LIKE '$categoria' ";
+            $sql .= "OR categoria";
+        } 
+
+        $sql .= " )";
+        
+        /*
+        $sql = "SELECT * FROM {$table} WHERE categoria";
+        $contador = 0;
+
+        foreach ($filtro as $contador => $categoria)
+        {
+            $sql .= " LIKE '$categoria' ";
+            $sql .= "OR categoria";
+        }
+
+        var_dump($sql);
+
+        //$sql .= "AND nome LIKE '%".$buscar."%'";
+        */
+        $stmt = $this->pdo->prepare($sql);
+
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
+
+    }
+
 
     //Aqui vão as funções de manipulação da base de dados
     //Essas funções rodam comandos SQL

@@ -155,12 +155,49 @@ class PagesController
 
 }
 
+session_start();
+
 class LoginController
 {
 
     public function view()
     {
         return view('login');
+    }
+    
+    public function login()
+    {
+        $email = $_GET['email'] ?? '';
+        $senha = $_GET['senha'] ?? '';
+
+
+        if( $email == 'admin' && $senha == 'admin') {
+            $_SESSION['usuario'] = 'admin';
+
+            header('Location: /usuarios');
+        }
+
+        $usuarios = App::get('database')->selectAll('usuarios');
+
+        foreach ($usuarios as $usuario) :
+
+        if( $usuario->email == $email && $usuario->senha == $senha) 
+        { 
+            $_SESSION['usuario'] = $usuario->nome;
+      
+            header('Location: /usuarios');
+        }
+        endforeach;
+
+        $_SESSION['error'] = true;
+        header('Location: /login');
+    }
+
+    public function deslogar() 
+    {
+        session_unset();
+        session_destroy();
+        header('Location: /login');
     }
 
 }
@@ -180,8 +217,107 @@ class ProdutosController
 
     public function view()
     {
+        $sql = 'SELECT * FROM produtos order by id desc ';
+
+
+        $produtosPorPagina = "8";
+        $pagina = $_GET['pagina'] ?? 1;
+        $inicio = $pagina - 1;
+        $inicio = $inicio * $produtosPorPagina;
+        $limite = 'LIMIT ' . $inicio . ',' . $produtosPorPagina;
+
         $produtos = App::get('database')->selectAll('produtos');
-        return view('produtos',compact('produtos'));
+        $totalProdutos = count($produtos); 
+        $totalPaginas = $totalProdutos / $produtosPorPagina;
+        $sql = $sql . $limite;
+        $produtos = App::get('database')->selectAllPaginacao($sql);
+
+        $paginacao = new \stdClass();
+        $paginacao->pagina = $pagina;
+        $paginacao->totalPaginas = $totalPaginas;
+        $paginacao->totalProdutos = $totalProdutos;
+        $paginacao->produtosPorPagina = $produtosPorPagina;
+        $paginacao->inicio = $inicio;
+
+        $categorias = App::get('database')->selectAll('categorias');
+        return view('produtos',compact('produtos','categorias','paginacao'));
+    }
+
+}
+
+class ResultsController
+{
+
+    public function busca()
+    {
+        
+        //Filtro e Busca vazios
+        if (empty($_GET['buscar']) && empty($_GET['categoria']))
+        {
+            $produtos = App::get('database')->selectAll('produtos');
+            $categorias = App::get('database')->selectAll('categorias');
+
+            return view('produtos',compact('produtos','categorias'));    
+        }
+        //Filtro vazio
+        else if (!empty($_GET['buscar']) && empty($_GET['categoria']))
+        {
+            $buscar = $_GET['buscar'];
+
+            $produtos = App::get('database')->buscar('produtos', $buscar);
+            $categorias = App::get('database')->selectAll('categorias');
+
+            return view('produtos',compact('produtos','categorias'));
+        }
+        //Busca vazia
+        else if (empty($_GET['buscar']) && !empty($_GET['categoria']))
+        {
+            $filtro = array();
+
+            $filtro[] = $_GET['categoria'];
+
+            $produtos = App::get('database')->filtrar('produtos', $filtro[0]);
+            $categorias = App::get('database')->selectAll('categorias');
+
+            return view('produtos',compact('produtos','categorias'));
+        }
+        //Nada vazio
+        else 
+        {
+            $filtro = array();
+
+            $filtro[] = $_GET['categoria'];
+
+            $buscar = $_GET['buscar'];
+
+            $produtos = App::get('database')->buscarFiltrar('produtos', $buscar, $filtro[0]);
+            $categorias = App::get('database')->selectAll('categorias');
+
+            return view('produtos',compact('produtos','categorias'));
+        }
+        
+        
+        
+        //var_dump($_GET['buscar']);
+
+        //$buscar = $_GET['buscar'];
+
+        
+
+        //$produtos = App::get('database')->buscar('produtos', $buscar);
+        //$categorias = App::get('database')->selectAll('categorias');
+        //return view('produtos',compact('produtos','categorias'));
+    }
+
+    public function filtro()
+    {
+        $filtro = array();
+
+        $filtro[] = $_POST['categoria'];
+
+        $produtos = App::get('database')->filtrar('produtos', $filtro[0]);
+        $categorias = App::get('database')->selectAll('categorias');
+        return view('produtos',compact('produtos','categorias'));
     }
 
 }
@@ -191,7 +327,12 @@ class ProdutoController
 
     public function view()
     { 
-        $produtos = App::get('database')->selectById('produtos',$_POST['id']);
+        
+        //$id = $_GET['id'];
+            //$produto = App::get('database')->selectById('produtos',$id);
+            //return view('produto', compact('produto'));
+        
+        $produtos = App::get('database')->selectById('produtos',$_GET['id']);
         return view('produto',compact('produtos'));
     
     }

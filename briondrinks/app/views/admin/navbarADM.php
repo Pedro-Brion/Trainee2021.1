@@ -8,7 +8,7 @@
             <li><a href="/usuarios">Usuários</a></li>
             <li><a href="/produtos-adm">Produtos</a></li>
             <li><a href="/categorias">Categorias</a></li>
-            <li><a href="/login">Sair</a></li>
+            <li><a href="/deslogar">Sair</a></li>
             <li id="menu-icon" class="menu-icon" onclick="openNav()">&#x1F378; Menu</li>
         </ul>
 

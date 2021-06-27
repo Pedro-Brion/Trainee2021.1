@@ -3,6 +3,12 @@
         animation-duration: 1.5s;
 }
 
+.aviso{
+    color: #00374d;
+    font-weight: bold;
+    font-size: 150%;
+}
+
 .card-produto{
     background-color:#00374d;
     color: white;

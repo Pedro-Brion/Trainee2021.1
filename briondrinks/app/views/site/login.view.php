@@ -6,24 +6,29 @@
     <title>Login</title>
 </head>
 <body>
-
+<?php if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    }
+    if (isset($_SESSION['usuario'])) {
+		
+      header('Location: /usuarios');
+    }
+    ?>
 <!-- NAVBAR -->
 <?php require('navbar.php'); ?>
 
 <!-- LOGIN -->  
     <div class="text-center mt-5 mb-5 pr-3 pl-3">
-        <form style="max-width: 300px;margin:auto;" class="shadow-lg pr-5 pl-5 pb-5 borda-login">
+        <form style="max-width: 300px;margin:auto;" class="shadow-lg pr-5 pl-5 pb-5 borda-login" action="/logar" method="GET">
           <img class="mb-2" src="../../../public/img/6.png" height="200" alt="logo">
           <h1 class="h3 mb-3 font-weight-normal titulo-pagina "><strong>LOGIN</strong></h1>
-          <input type="email" id="endereço de email" class="form-control mb-3"placeholder="email" required autofocus>
-          <input type="senha" id="senha" placeholder="senha" class="form-control">
+            <input  type="text" name="email" id="email" class="form-control mb-3" placeholder="E-mail" required autofocus>
+            <input  type="password" name="senha" id="senha" placeholder="Senha" class="form-control">
           <div class="checkbox mt-3">
-            <label>
-              <input type="checkbox" value="lembre-se de mim"> Lembre-se de mim
-            </label>
           </div>
           <div class="mt-3">
-            <button  class="btn cor-botoes btn-block form-control"> LOGIN</button>
+            <button  type="submit" class="btn cor-botoes btn-block form-control"> LOGIN</button>
           </div>
         </form>
     </div>

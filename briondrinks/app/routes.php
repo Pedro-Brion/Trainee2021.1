@@ -24,6 +24,8 @@ $router->get('quemsomos','PagesController@viewQuemSomos');
 
 //Login Controller
 $router->get('login','LoginController@view');
+$router->get('logar','LoginController@login');
+$router->get('deslogar','LoginController@deslogar');
 
 //Contato Controller
 $router->get('contato','ContatoController@view');
@@ -31,7 +33,11 @@ $router->get('contato','ContatoController@view');
 //Produtos Controller
 $router->get('produtos','ProdutosController@view');
 
+//Results Controller
+$router->get('results','ResultsController@busca');
+$router->post('results','ResultsController@filtro');
+
 //Produto Controller
-$router->post('produto','ProdutoController@view');
+$router->get('produto','ProdutoController@view');
 
 ?>

@@ -6,6 +6,18 @@
 </head>
 <body>
 
+<?php
+
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+    if (!isset($_SESSION['usuario'])) {
+		
+        header('Location: /login');
+    }
+?>
+
 <!-- NAVBAR -->
 <?php require('navbarADM.php'); ?>
 
@@ -14,8 +26,8 @@
     <div class="linhaHorizontal mb-5"></div>
 
 <!-- BOTÃO ADICIONAR -->
-<div class="container botao-adicionar mb-3" data-toggle="modal" data-target="#modalAdicionar">
-    <button type="button" class="btn cor-botoes">Adicionar</button>
+<div class="container botao-adicionar mb-3">
+    <button type="button" class="btn cor-botoes" data-toggle="modal" data-target="#modalAdicionar">Adicionar</button>
 </div>
 
 

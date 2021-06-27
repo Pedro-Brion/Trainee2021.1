@@ -3,7 +3,9 @@
 <head>
     <?php require('head.php'); ?>
     <link rel="stylesheet" href="../../../public/css/css-produto.css">
-    <title>PRODUTO GENÉRICO</title>
+    <?php foreach ($produtos as $produto) : ?>
+    <title><?= $produto->nome ?></title>
+    <?php endforeach; ?>
 </head>
 <body>
 
@@ -11,8 +13,9 @@
 <?php require('navbar.php'); ?>
 
 <!-- TÍTULO DA PÁGINA -->
+
 <?php foreach ($produtos as $produto) : ?>
-    <h2 class="titulo-pagina mt-5"><<?= $produto->nome ?></h2>
+    <h2 class="titulo-pagina mt-5"><strong><?= $produto->nome ?></strong></h2>
     <div class="linhaHorizontal mb-5"></div>
 
 <!-- BOTÃO VOLTAR -->
