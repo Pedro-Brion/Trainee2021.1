@@ -177,7 +177,6 @@ class LoginController
         $email = $_GET['email'] ?? '';
         $senha = $_GET['senha'] ?? '';
 
-
         if( $email == 'admin' && $senha == 'admin') {
             $_SESSION['usuario'] = 'admin';
 
