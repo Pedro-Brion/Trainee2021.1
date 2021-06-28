@@ -145,7 +145,13 @@ class PagesController
 
     public function viewHome()
     {
-        $produtos = App::get('database')->selectAll('produtos');
+        $produtosPorPagina = "3";
+        $inicio = 0;
+        $limite = 'LIMIT ' . $inicio . ',' . $produtosPorPagina;
+
+        $produtos = App::get('database')->selectAll2('produtos');
+
+        $produtos = App::get('database')->selectAllPaginacao($limite,$produtos);
 
         return view('home',compact('produtos'));
     }

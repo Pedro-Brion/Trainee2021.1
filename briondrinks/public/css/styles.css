@@ -39,6 +39,12 @@ html, body {
     transform: scale(1.1,1.1);
 }
 
+.card-borda{
+    border-width: 5px;
+    border-style: solid;
+    border-color: #00374d;
+}
+
 @media(max-width:768px){
 
     .titulo-pagina{

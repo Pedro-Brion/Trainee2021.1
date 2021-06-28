@@ -96,20 +96,21 @@
     ?>           
 
     <nav aria-label="Navegação da página de produtos" class="filtro-pesquisa mb-5">
-         
+        <?php
+            $anterior = $paginacao->pagina -1;
+            $proximo = $paginacao->pagina +1;
+        ?>
         <ul class="pagination justify-content-center">
           <li class="page-item ">
-            <a class="page-link" href="/produtos?pagina=<?= $paginacao->pagina - 1 ?>" tabindex="-1"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+            <a class="page-link" href="/produtos?pagina=<?= $anterior ?>" tabindex="-1"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
           </li>
             <?php
-                $anterior = $paginacao->pagina -1;
-                $proximo = $paginacao->pagina +1;
-
+                
                 for($i = 1; $i < $totalPaginas + 1; $i++) { ?>
                     <li class="page-item"><a class="page-link" href="/produtos?pagina=<?= $i ?>"><?= $i ?></a></li>
             <?php } ?>
           <li class="page-item">
-            <a class="page-link" href="/produtos?pagina=<?= $paginacao->pagina + 1 ?>"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+            <a class="page-link" href="/produtos?pagina=<?= $proximo ?>"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
           </li>
         </ul>
     </nav>
