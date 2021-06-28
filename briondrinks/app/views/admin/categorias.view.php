@@ -93,7 +93,7 @@
           <form action="/categorias/update" method="POST">
               <div class="form-group">
                 <label for="inputEmail4">Nome:</label>
-                <input name="categoria" type="text" class="form-control" id="inputEmail4" placeholder="Categoria" value="<?= $categoria->nome ?>" required>
+                <input name="categoria" type="text" class="form-control" id="inputEmail4" placeholder="Categoria" value="<?= $categoria->categoria ?>" required>
               </div>
         </div>
         <div class="modal-footer">

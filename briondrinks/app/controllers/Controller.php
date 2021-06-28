@@ -82,7 +82,7 @@ class CategoriasController
     public function update()
     {
         $parametros = [
-            'nome' => $_POST['nome']
+            'categoria' => $_POST['categoria']
         ];
 
         App::get('database')->updateCategorias('categorias', $parametros, $_POST['id']);
@@ -153,6 +153,13 @@ class PagesController
         $produtos = App::get('database')->selectAllPaginacao($limite,$produtos2);
 
         return view('home',compact('produtos'));
+    }
+
+    public function viewQuemSomos()
+    {
+        
+
+        return view('quemsomos');
     }
 }
 session_start();
@@ -315,7 +322,7 @@ class ResultsController
             $produtos2 = App::get('database')->filtrar2('produtos', $filtro[0]);
             $totalPaginas = $totalProdutos / $produtosPorPagina;
 
-            $produtos = App::get('database')->selectAllPaginacao($limite,$produtos2);
+            $produtos2 = App::get('database')->selectAllPaginacao($limite,$produtos2);
 
             $paginacao = new \stdClass();
             $paginacao->pagina = $pagina;

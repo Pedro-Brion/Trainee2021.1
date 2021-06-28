@@ -66,19 +66,25 @@
 <div id="adicionados" class="block">
   <div class="container">
   
-    <h2 class="titulo-pagina mt-5"><b>ÚLTIMOS ADICIONADOS</b></h2>
+    <h2 class="titulo-pagina mt-5"><b>DESTAQUES</b></h2>
     <div class="linhaHorizontal mb-5"></div>
     <div class="row">
     <?php foreach ($produtos as $produto) :?>
-      <div class="col-lg-3 col-mg-6 mb-4 mb-lg-0">
-        <a href="#" class="destaque">
-          <div class="img-container mb-3">
-            <img src="../../../public/img/<?= $produto->foto ?>" class="img-fluid">
-          </div>
-          <h5><?= $produto->nome ?></h5>
-          <p class="pb-3"><?= $produto->descricao ?></p>
-        </a>
-      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card text-center shadow-p card-borda card-produto mt-3 mb-3" >
+                    <img class="card-img-top" src="../../../public/img/<?= $produto->foto ?>" alt="Imagem do drink">
+                    <div class="card-body">
+                        <h5 class="card-title"><?= $produto->nome ?></h5>
+                        <p class="card-text"><?= $produto->preco ?></p>
+                        <p class="card-text"><?= $produto->categoria ?></p>
+                        <form action="/produto" method="GET">
+                            <input type="hidden" name ="id" value="<?=$produto->id ?>">
+                            <button type="submit" class="btn card-botao">VER PRODUTO</button>
+                        </form>
+                   
+                    </div>
+                </div>
+            </div>
 
       
       <?php endforeach; ?>

@@ -120,7 +120,8 @@ class QueryBuilder
 
     public function updateCategorias ($table, $parametros, $id)
     {
-        $sql = "UPDATE `{$table}` SET `nome`='{$parametros['nome']}' WHERE id = {$id}";
+        $sql = "UPDATE {$table} SET categoria='{$parametros['categoria']}' WHERE id = {$id}";
+        //$sql = "UPDATE {$table} SET nome='{$parametros['nome']}',descricao='{$parametros['descricao']}',categoria='{$parametros['categoria']}', preco='{$parametros['preco']}', foto='{$parametros['foto']}' WHERE id = {$id}";
         
 
         try {
@@ -187,11 +188,16 @@ class QueryBuilder
         
         $sql = "SELECT * FROM {$table} WHERE categoria";
         $contador = 0;
+        $contador2 = count($filtro); 
 
         foreach ($filtro as $contador => $categoria)
         {
             $sql .= " LIKE '$categoria' ";
-            $sql .= "OR categoria";
+            if($contador < $contador2-1){
+                $sql .= "OR categoria";
+            }
+            
+            
         }
 
         $stmt = $this->pdo->prepare($sql);
@@ -205,13 +211,18 @@ class QueryBuilder
     public function filtrar2 ($table, $filtro)
     {
         
-        $sql = "SELECT * FROM {$table} WHERE categoria";
+        $sql = "SELECT * FROM {$table} WHERE categoria ";
         $contador = 0;
+        $contador2 = count($filtro); 
 
         foreach ($filtro as $contador => $categoria)
         {
             $sql .= " LIKE '$categoria' ";
-            $sql .= "OR categoria";
+            if($contador < $contador2-1){
+                $sql .= "OR categoria";
+            }
+            
+            
         }
 
         return $sql;

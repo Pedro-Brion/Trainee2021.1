@@ -188,7 +188,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn" data-dismiss="modal">Cancelar</button>
-                    <input type="hidden" value="<?= $produto->id ?>" name="id">
+                    <input type="hidden" name="id">
                     <button type="submit" class="btn cor-botoes">Salvar Alterações</button>    
                 </div>
                 </form>
