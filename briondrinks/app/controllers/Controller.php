@@ -145,24 +145,16 @@ class PagesController
 
     public function viewHome()
     {
-        $produtosPorPagina = "3";
+        $produtosPorPagina = "4";
         $inicio = 0;
         $limite = 'LIMIT ' . $inicio . ',' . $produtosPorPagina;
-
-        $produtos = App::get('database')->selectAll2('produtos');
-
-        $produtos = App::get('database')->selectAllPaginacao($limite,$produtos);
+        $produtos2 = App::get('database')->selectAll2('produtos');
+        $produtos = App::get('database')->selectAll('produtos');
+        $produtos = App::get('database')->selectAllPaginacao($limite,$produtos2);
 
         return view('home',compact('produtos'));
     }
-
-    public function viewQuemSomos()
-    {
-        return view('quemsomos');
-    }
-
 }
-
 session_start();
 
 class LoginController
