@@ -65,50 +65,23 @@
 <!-- ÚLTIMOS ADICIONADOS -->
 <div id="adicionados" class="block">
   <div class="container">
+  
     <h2 class="titulo-pagina mt-5"><b>ÚLTIMOS ADICIONADOS</b></h2>
     <div class="linhaHorizontal mb-5"></div>
     <div class="row">
-
+    <?php foreach ($produtos as $produto) :?>
       <div class="col-lg-3 col-mg-6 mb-4 mb-lg-0">
         <a href="#" class="destaque">
           <div class="img-container mb-3">
-            <img src="../../../public/img/margarita.PNG" class="img-fluid">
+            <img src="../../../public/img/<?= $produto->foto ?>" class="img-fluid">
           </div>
-          <h5>Margarita</h5>
-          <p class="mb-0">Drink a base de tequila,licor de laranja e suco de limão.</p>
+          <h5><?= $produto->nome ?></h5>
+          <p class="pb-3"><?= $produto->descricao ?></p>
         </a>
       </div>
 
-      <div class="col-lg-3 col-mg-6 mb-4 mb-lg-0">
-        <a href="#" class="destaque">
-          <div class="img-container mb-3">
-            <img src="../../../public/img/lagoa.PNG" class="img-fluid">
-          </div>
-          <h5>Lagoa Azul</h5>
-          <p class="mb-0">Drink feito com o licor Curaçau Blue, vodka e limonada e com baixo teor alcoólico.</p>
-        </a>
-      </div>
-
-      <div class="col-lg-3 col-mg-6 mb-4 mb-lg-0">
-        <a href="#" class="destaque">
-          <div class="img-container mb-3">
-            <img src="../../../public/img/jack.PNG" class="img-fluid">
-          </div>
-         <h5>Jack and Coke</h5>
-         <p class="mb-0">Drink a base do whisky Jack and Daniel's combinado com Coca-Cola .</p>
-        </a>
-      </div>
-    
-      <div class="col-lg-3 col-mg-6 mb-4 mb-lg-0">
-        <a href="#" class="destaque">
-          <div class="img-container mb-3">
-            <img src="../../../public/img/highball.PNG" class="img-fluid">
-          </div>
-          <h5>Highball</h5>
-          <p class="mb-0">Drink a base de whisky e água tônica combinado com o doce da água de coco.</p>
-        </a>
-      </div>
-
+      
+      <?php endforeach; ?>
     </div>
   </div>
 </div>
